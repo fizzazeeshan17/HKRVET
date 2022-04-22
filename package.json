@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/fizzazeeshan17/HKRVET#readme",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "mongoose": "^6.3.1",
     "signale": "^1.4.0"
