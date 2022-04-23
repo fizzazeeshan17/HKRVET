@@ -1,33 +1,33 @@
 const express = require("express");
 const PORT = process.env.PORT || 3000;
-const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const signale = require("signale");
-
+const pages = require("./routes/pages");
 dotenv.config();
+const app = express();
 
 app.use(express.json());
 
-// app.get("./public/index", (req, res) => {
-//   // const html = `<h1>Hello</h1>`;
-//   res.send(html);
-// });
-
-app.use(express.static("public"));
-
+// connect to DB
 mongoose.connect(
-  process.env.DB_CONNECTION,
-  { useNewUrlParser: true, useUnifiedTopology: true },
-  (error, db) => {
-    if (error) {
-      console.log(error);
-    } else {
-      signale.success("connected successfully to mongoDB");
-    }
+  process.env.DB_CONNECT,
+  { useUnifiedTopology: true, useNewUrlParser: true },
+  () => {
+    console.log("connected to db");
   }
 );
 
+const authRoute = require("./routes/auth");
+const secureRoute = require("./routes/secure");
+
+// Middlewares
+app.use(express.json());
+app.use(express.static("public"));
+// Route Middleware
+app.use("/api/user", authRoute);
+app.use("/api/secure", secureRoute);
+app.use("/", pages);
+
 app.listen(PORT, () => {
-  signale.success("listening on port " + PORT);
+  console.log("App running on port" + PORT);
 });
