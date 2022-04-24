@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const User = require("../models/User");
-const Booking = require("../models/Tid");
+const Tid = require("../models/Tid");
 const { registerationValidation, loginValidation } = require("../validation");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -61,12 +61,13 @@ router.post("/login", async (req, res) => {
   res.header("auth-token", token).json({ token: token, redirect: "index" });
 });
 
-router.post("/booking-user", async (req, res) => {
-  const booking = new Booking(req.body);
-  booking.user = req.user._id;
+router.post("/tid-user", async (req, res) => {
+  const tid = new Tid(req.body);
+  tid.user = req.user._id;
 
   try {
-    const savedBooking = await booking.save();
+    const savedBooking = await tid.save();
+    
     res.json(savedBooking);
   } catch (error) {
     console.log(error);
@@ -74,55 +75,55 @@ router.post("/booking-user", async (req, res) => {
 });
 
 router.get("/bookings-user", async (req, res) => {
-  const bookings = new Booking.find({ user: req.user._id }).sort({
+  const bookings = new Tid.find({ user: req.user._id }).sort({
     $natural: -1,
   });
   res.json(bookings);
 });
 
-router.get("/booking-user", async (req, res) => {
+router.get("/tid-user", async (req, res) => {
   const { _id } = req.params;
-  const booking = await Booking.findById(_id);
+  const tid = await Tid.findById(_id);
 
-  if (!booking) {
+  if (!tid) {
     const error = new Error("An Error occurred");
     return res.status(400).json({ msg: error.message });
   }
-  res.json(booking);
+  res.json(tid);
 });
 
-router.put("/booking-user/:id", async (req, res) => {
+router.put("/tid-user/:id", async (req, res) => {
   const { _id } = req.params;
   const { pet, reason } = req.body;
-  const booking = await Booking.findById(_id);
+  const tid = await Tid.findById(_id);
 
-  if (!booking) {
+  if (!tid) {
     const error = new Error("There was an error");
     return res.status(400).json({ msg: error.message });
   }
 
   try {
-    booking.pet = pet;
-    booking.reason = reason;
-    await booking.save();
-    res.json({ msg: "Booking details updated" });
+    tid.pet = pet;
+    tid.reason = reason;
+    await tid.save();
+    res.json({ msg: "Tid details updated" });
   } catch (error) {
     console.log(error);
   }
 });
 
-router.delete("/booking-user/:id", async (req, res) => {
+router.delete("/tid-user/:id", async (req, res) => {
   const { id } = req.params;
-  const booking = await Booking.findById(id);
+  const tid = await Tid.findById(id);
 
-  if (!booking) {
+  if (!tid) {
     const error = new Error("There was an error");
     return res.status(400).json({ msg: error.message });
   }
 
   try {
-    await booking.deleteOne({ _id: id });
-    res.json({ msg: "Booking deleted successfully" });
+    await tid.deleteOne({ _id: id });
+    res.json({ msg: "Tid deleted successfully" });
   } catch (error) {
     console.log(error);
   }
