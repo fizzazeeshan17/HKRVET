@@ -26,6 +26,10 @@
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",
+<<<<<<< HEAD
+=======
+    "jwt-decode": "^3.1.2",
+>>>>>>> 1548641dc70edcb3c3d6a8faf118ddd0d759cbdb
     "mongoose": "^6.3.1",
     "signale": "^1.4.0"
   },
