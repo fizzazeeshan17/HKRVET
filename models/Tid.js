@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const tidSchema = mongoose.Schema(
   {
@@ -22,5 +22,4 @@ const tidSchema = mongoose.Schema(
   }
 );
 
-const Tid = mongoose.model("Tid", tidSchema);
-export default Tid;
+module.exports = mongoose.model("Tid", tidSchema);

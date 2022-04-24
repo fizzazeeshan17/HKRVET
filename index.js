@@ -4,6 +4,8 @@ const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const signale = require("signale");
+const userRoute = require("./routes/userRoutes");
+const secureRoute = require("./routes/secure");
 
 dotenv.config();
 
@@ -15,6 +17,8 @@ app.use(express.json());
 // });
 
 app.use(express.static("public"));
+app.use("/api/user", userRoute);
+app.use("/api/secure", secureRoute);
 
 mongoose.connect(
   process.env.DB_CONNECTION,
@@ -23,7 +27,7 @@ mongoose.connect(
     if (error) {
       console.log(error);
     } else {
-      signale.success("connected successfully to mongoDB");
+      signale.success("connected successfully to mongoose");
     }
   }
 );
