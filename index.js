@@ -18,7 +18,7 @@ app.use(express.json());
 // });
 
 app.use(express.static("public"));
-app.use("/api/user", userRoute);
+app.use("/api/users", userRoute);
 app.use("/api/secure", secureRoute);
 app.use("/api/booking", bookingRoute);
 
