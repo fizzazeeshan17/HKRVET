@@ -21,6 +21,10 @@ const userSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    tid: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
   },
   { timestamps: true }
 );

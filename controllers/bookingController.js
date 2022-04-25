@@ -34,6 +34,7 @@ const addBooking = async (req, res) => {
       pet: req.body.pet,
       reason: req.body.reason,
     });
+    booking.save();
 
     res.status(201).json(booking);
   } catch (err) {
