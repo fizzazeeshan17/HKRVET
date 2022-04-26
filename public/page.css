@@ -20,7 +20,7 @@ a:hover {
 }
 
 .btn-primary:hover { background: #068ccf; }
-.tm-text-primary { color: #006699; }
+.tm-text-primary { font-family: fantasy; text-align: center; color: #006699; }
 .tm-text-secondary { color: #009999; }
 hr { border-top: 4px solid #CCC; }
 
@@ -55,8 +55,8 @@ hr { border-top: 4px solid #CCC; }
 }
 
 .tm-section-wrap {
-	width: calc(100% - 750px);
-	margin-left: 750px;
+	width: calc(100% - 350px);
+	margin-left: 350px;
 	margin-right: 0;
 	position: relative;
 }
@@ -716,4 +716,11 @@ select:not([multiple]) {
 		width: 100%;
 		margin-left: 0;
 	}
+}
+#home-img{
+	width: 600;
+	height: 400;
+	margin-top: -30px;
+	margin-left: 150px;
+	margin-bottom: -170px;
 }
