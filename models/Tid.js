@@ -1,3 +1,4 @@
+const { date } = require("@hapi/joi/lib/template");
 const mongoose = require("mongoose");
 
 const tidSchema = mongoose.Schema(
@@ -15,6 +16,11 @@ const tidSchema = mongoose.Schema(
     owner: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
+    },
+
+    time: {
+      type: Date,
+      required: true,
     },
   },
   {
