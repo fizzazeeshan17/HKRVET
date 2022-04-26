@@ -2,8 +2,10 @@
 const Joi = require("@hapi/joi");
 
 // Register Validation
-const registerValidation = (data) => {
+const registerationValidation = (data) => {
   const schema = Joi.object({
+    fullName: Joi.string().min(6).required(),
+    phone: Joi.number().min(6).required(),
     email: Joi.string().min(6).required().email(),
     password: Joi.string().min(6).required(),
   });
@@ -22,6 +24,6 @@ const loginValidation = (data) => {
 };
 
 module.exports = {
-  registerValidation,
+  registerationValidation,
   loginValidation,
 };

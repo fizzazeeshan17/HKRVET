@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-import bcrypt from "bcrypt";
+const bcrypt = require("bcryptjs");
+const mongoose = require("mongoose");
 
 const vetSchema = mongoose.Schema({
   fullName: {
@@ -23,5 +23,5 @@ const vetSchema = mongoose.Schema({
   },
 });
 
-const Vet = mongoose.model("Vet", vetSchema);
-export default Vet;
+module.exports = mongoose.model("Vet", vetSchema)
+
