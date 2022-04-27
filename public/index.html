@@ -312,25 +312,25 @@
                     <hr class="mb-5">
                     <div class="row">
                        
-                       <p id="error"></p>
-                    <form id="sign-up-form">
-                        <fieldset>
-                            <legend>Sign up information</legend>
-                            <div>
-                                <p>Name:</p>
+                        <form id="sign-up-form">
+                            <fieldset >
+                                <legend>Sign up information</legend>
+                                <div>
+                                <span class="error" id="error"></span>
+                                <p class="required">Name:</p>
                                 <input type="text" id="sign-up-name" placeholder="Your name" size="30">
-                                <p>Phone Number:</p>
+                                <p class="required">Phone Number:</p>
                                 <input type="text" id="sign-up-phone" placeholder="Your phone number" size="30">
-                                <p>Email:</p>
-                                <input type="email" id="sign-up-email" placeholder="Your last name" size="30">
-                                
-                                <p>Password:</p>
-                                <input type="password" id="sign-up-password" placeholder="Password" size="30">
+                                <p class="required">Email:</p>
+                                <input type="email" id="sign-up-email" placeholder="Your last name" size="30"> 
+                                <p class="required">Password:</p>
+                                <input type="password" id="sign-up-password" placeholder="Password" size="30"> 
                                 <br><br>
                                 <button type="submit">Sign Up</button>
                             </div>
+
                         </fieldset>
-                
+                        
                     </form>
                         </div>
                         
@@ -350,16 +350,18 @@
                                 <fieldset width = 100%>
                                     <legend>Login information</legend>
                                     <div>
-                                        <p>Email:</p>
-                                        <input type="email" id="email" placeholder="Email" size="30">
-                                        <p>Password:</p>
-                                        <input type="password" id="password" placeholder="Password" size="30">
+                                        <span class="error" id="errorMsg"></span>
+                                        <p class="required">Email:</p>
+                                        <input type="email" id="email" placeholder="Email" size="30"><p id="error"></p>
+                                        <p class="required">Password:</p>
+                                        <input type="password" id="password" placeholder="Password" size="30"><p id="error"></p>
                                         <br><br>
                                         <button type="submit">Login</button>
                                     </div>
                                 </fieldset>
                             </form>
-                       
+                            
+                            
                         </div>
                         <div class="col-xl-6 tm-login-col-r">
                         </div>

@@ -682,6 +682,16 @@ select:not([multiple]) {
 	display: block;
 }
 
+.error{
+    color: red;
+}
+
+.required:after {
+    content:" *";
+    color: red;
+}
+
+
 .tm-copyright { padding: 50px 70px 20px 0; }
 
 @media (max-width: 1400px) {
