@@ -781,3 +781,46 @@ select:not([multiple]) {
 	margin-left: 150px;
 	margin-bottom: -170px;
 }
+
+
+/* ****************  Batcave.css */
+
+.intoTop, .batcaveForm{
+	padding: 2%;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	width: fit-content;
+	text-align: center;
+	margin: auto;
+}
+.batcaveForm{
+	border: solid green 1px;
+	box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	width: 50%;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+.dateLabel,   .textareaLabel{
+	border: 1px gray solid;
+	background-color: rgba(0, 0, 0, 0.1);
+	padding: 3%;
+	border-radius:12px ;
+	margin: 3% auto;
+}  
+
+.datecss, .textareacss{
+	margin-top: 3%;
+}
+.textareacss{
+	max-width: 200px;
+	max-height: 200px;
+	padding: 2%;
+}
+.bookButton{
+	width: fit-content;
+	margin: 2% auto;
+}
+#error{color:red;}
+
+

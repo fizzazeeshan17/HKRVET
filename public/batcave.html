@@ -15,8 +15,20 @@
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>You are successfully authenticated!</h1>
-    <h1>This is a very secure site!</h1>
+    <div class="intoTop">
+      <h1 class="welcomingH">Hey, Welcome to page!</h1>
+      <h1 class="welcomingH">Here you can book a conviniet time for you.</h1>
+    </div>
+    <form class="batcaveForm" id="bookingForm">
+      <label class="dateLabel">
+        Date: <input type="date" id="dateInput" class="datecss">
+      </label>
+      <label class="textareaLabel">
+        Reason: <textarea id="textareaInput" class="textareacss"></textarea>
+      </label>
+      <p id="error"></p>
+      <button type="submit" class="bookButton"> Book</button>
+    </form>
     <script src="secure.js"></script>
   </body>
 </html>
