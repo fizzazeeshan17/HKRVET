@@ -1,11 +1,13 @@
 const router = require("express").Router();
 const User = require("../models/User");
-const { registerationValidation, loginValidation } = require("../validation");
+const { registerValidation, loginValidation } = require('../validation');
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const signale = require("signale");
+const jwt_decode = require("jwt-decode");
 
-router.post("/register", async (req, res) => {
-  const { error } = registerationValidation(req.body);
+/* router.post("/register", async (req, res) => {
+  const { error } = registerValidation(req.body);
   if (error) {
     return res.status(400).json({ error: error.details[0].message });
   }
@@ -31,13 +33,14 @@ router.post("/register", async (req, res) => {
     //   const user = new User(req.body);
     const savedUser = await user.save();
     const token = jwt.sign({ _id: user._id }, process.env.SECRET_TOKEN);
-    res.json({ user: user._id, redirect: "index", token });
+    res.json({ user: user._id, redirect: "batcave.html", token });
   } catch (error) {
     res.status(201).json(error);
   }
-});
+}); */
 
-router.get("/", async (req, res) => {
+
+ router.get("/", async (req, res) => {
   try {
     const users = await User.find();
     // .populate("tids", ["tids"])
@@ -92,9 +95,9 @@ router.delete("/:id", async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: "Server Error" });
   }
-});
+}); 
 
-router.post("/login", async (req, res) => {
+ /* router.post("/login", async (req, res) => {
   // Validate User
   const { error } = loginValidation(req.body);
   if (error) {
@@ -115,7 +118,105 @@ router.post("/login", async (req, res) => {
 
   // Create and assign token
   const token = jwt.sign({ _id: user._id }, process.env.SECRET_TOKEN);
-  res.header("auth-token", token).json({ token: token, redirect: "index" });
-});
+  res.header("auth-token", token).json({ token: token, redirect: "batcave.html" });
+}); 
+ */
 
+/* router.post("/login", async (req, res) => {
+  // Validate User
+  const { error } = loginValidation(req.body);
+  signale.success("inside login");
+  if (error) {
+    return res.status(400).json({ error: error.details[0].message });
+  }
+
+  // if existing email
+  const user = await User.findOne({ email: req.body.email });
+  if (!user) {
+    return res.status(400).json({ error: "Email is not found" });
+  }
+
+  // Password correct?
+  const validPassword = await bcrypt.compare(req.body.password, user.password);
+  if (!validPassword) {
+    return res.status(400).json({ error: "Invalid password" });
+  }
+
+  // Create and assign token to frontend
+  const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
+  res.header("auth-token", token).json({ token: token, redirect: "batcave" });
+});
+function MyError() {
+  Error.captureStackTrace(this, MyError);
+}
+
+new MyError().stack;
+ */
+
+ //muaz code 
+
+ router.post('/register', async (req, res) => {
+ 
+    // user
+    const { error } = registerValidation(req.body);
+ 
+    if (error) {
+        return res.status(400).json({ error: error.details[0].message });
+    }
+    
+    // const emailExist = await User.findOne({ email: req.body.email });
+
+    // if (emailExist) {
+    //     return res.status(400).json({error: 'Email exists'});
+    // }
+
+    // password hashing
+    const salt = await bcrypt.genSalt(10);
+    const hashPassword = await bcrypt.hash(req.body.password, salt);
+ 
+    // user creation
+    const user = new User({
+        fullName: req.body.fullName,
+        phone: req.body.phone,
+        email: req.body.email,
+        password: hashPassword
+    })
+ 
+    try {
+        const savedUser = await user.save();
+        const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
+        // sorry sir but I am a superman fan :)
+        res.json({ user: user._id, redirect: '#login', token });
+    } catch (err) {
+        res.status(400).json(err);
+    }
+
+});
+ 
+router.post('/login', async (req,res) => {
+    const { error } = loginValidation(req.body);
+    if(error){
+        return res.status(400).json({error: error.details[0].message})
+    }
+    // check if user exists
+    const user = await User.findOne({email: req.body.email});
+
+    if(!user) {
+        return res.status(400).json({error: 'Email not found'});
+    }
+    
+    // check if password is correct
+    // const validPass = await bcrypt.compare(req.body.password, user.password);
+    // if(!validPass){
+    //     return res.status(400).json({error: "Invalid Password"})
+    // };
+
+    // creating and assinging token for frontend
+    const token = jwt.sign({_id:user._id}, process.env.TOKEN_SECRET)
+    res.header('auth_token', token).json({token, redirect: 'batcave.html'});
+
+});
+ 
+
+ 
 module.exports = router;

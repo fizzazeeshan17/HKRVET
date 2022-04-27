@@ -21,6 +21,7 @@ const tidSchema = mongoose.Schema(
     time: {
       type: Date,
       required: true,
+      default: Date.now,
     },
   },
   {

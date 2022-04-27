@@ -58,11 +58,6 @@ dotenv.config();
 
 app.use(express.json());
 
-// app.get("./public/index", (req, res) => {
-//   // const html = `<h1>Hello</h1>`;
-//   res.send(html);
-// });
-
 app.use(express.static("public"));
 app.use("/api/user", userRoute);
 app.use("/api/secure", secureRoute);
@@ -83,3 +78,6 @@ mongoose.connect(
 app.listen(PORT, () => {
   signale.success("listening on port " + PORT);
 });
+
+
+

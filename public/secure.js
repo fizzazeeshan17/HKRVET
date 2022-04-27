@@ -7,4 +7,3 @@ fetch('/api/secure', {
     
 });
 
-// when we signup with a different id it takes us to batcave

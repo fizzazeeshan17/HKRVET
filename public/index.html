@@ -2,11 +2,16 @@
 <html lang="en">
 
 <head>
+    <script src="app.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://www.google.com">
+    
     <title>HKRVet</title>
 
-
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <meta Content-Security-Policy: default-src 'self';font-src fonts.gstatic.com;style-src 'self' fonts.googleapis.com>
     <link rel="stylesheet" href="page.css">
     <link rel="stylesheet" href="./slick/slick.min.css">
     <link rel="stylesheet" href="./slick/slick-theme.css">
@@ -15,8 +20,8 @@
 </head>
 
 <body>
+   
     <script src="app.js"></script>
-
     <div class="container-fluid">
         <div class="row">
             <div id="tm-sidebar" class="tm-sidebar">
@@ -52,8 +57,20 @@
                                     <div class="triangle-right"></div>
                                     Login
                                 </a>
-                            </li>
+                            </li> 
 
+                            <!-- <li>
+                                <button id="submitBtn" class="nav-link">
+                                   
+                                    Login
+                                <script>
+                                    document.getElementById("submitBtn").addEventListener("click", myFunction);
+                                    function myFunction() {
+                                      window.location.href="form.html";
+                                    }
+                                  </script>
+                            </li>
+ -->
                             <li class="nav-item">
                                 <a href="#LocateUs" class="nav-link">
                                     <div class="triangle-right"></div>
@@ -289,24 +306,32 @@
     
     
     <!-- Register section -->
-    <div class="tm-section-wrap">
+     <div class="tm-section-wrap">
         <div id="register" class="tm-section">
             <h2 class="tm-text-primary">Register</h2>
                     <hr class="mb-5">
                     <div class="row">
                        
-                            <p id="error"></p>
-                            <form style="margin-left: 150px;" id="sign-up-form">
+                       <p id="error"></p>
+                    <form id="sign-up-form">
+                        <fieldset>
+                            <legend>Sign up information</legend>
+                            <div>
+                                <p>Name:</p>
+                                <input type="text" id="sign-up-name" placeholder="Your name" size="30">
+                                <p>Phone Number:</p>
+                                <input type="text" id="sign-up-phone" placeholder="Your phone number" size="30">
+                                <p>Email:</p>
+                                <input type="email" id="sign-up-email" placeholder="Your last name" size="30">
                                 
-                                <h4>Sign Up</h4>
-                                <label class="required" for="Email">Email:</label><br />
-                                <input type="email" id="sign-up-email" />
-                                <br />
-                                <label class="required" for="Password">Password:</label><br />
-                                <input type="password" id="sign-up-password" /><br />
-                                <br />
-                                <button class="gradientbutton" type="submit">Sign up</button>
-                            </form>
+                                <p>Password:</p>
+                                <input type="password" id="sign-up-password" placeholder="Password" size="30">
+                                <br><br>
+                                <button type="submit">Sign Up</button>
+                            </div>
+                        </fieldset>
+                
+                    </form>
                         </div>
                         
                             
@@ -314,34 +339,37 @@
                     </div>
                 </div>
             </div>
-            <!-- Login section -->
+            
             <div class="tm-section-wrap">
                 <div id="login" class="tm-section">
                     <h2 class="tm-text-primary">Login</h2>
                     <hr class="mb-5">
                     <div class="row">
                         <div class="col-xl-6 tm-login-col-l mb-4">
-                            <form style="margin-left: 150px;" id="login-form">
-                                <h4>Login</h4>
-                                <label class="required" for="Email">Email:</label><br />
-                                <input type="email" id="email" />
-                                <br />
-                                <label class="required" for="Password">Password:</label><br />
-                                <input type="password" id="password" /><br />
-                                <br />
-                                <button class="gradientbutton" type="submit">Login</button>
+                            <form id="login-form">
+                                <fieldset width = 100%>
+                                    <legend>Login information</legend>
+                                    <div>
+                                        <p>Email:</p>
+                                        <input type="email" id="email" placeholder="Email" size="30">
+                                        <p>Password:</p>
+                                        <input type="password" id="password" placeholder="Password" size="30">
+                                        <br><br>
+                                        <button type="submit">Login</button>
+                                    </div>
+                                </fieldset>
                             </form>
-                            <script src="app.js"></script>
+                       
                         </div>
                         <div class="col-xl-6 tm-login-col-r">
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> 
             
             <!-- Location section -->
             <div class="tm-section-wrap">
-                <div class="tm-parallax" data-parallax="scroll" data-image-src="img/img-04.jpg"></div>
+                <div class="tm-parallax" data-parallax="scroll"></div>
                 <div id="LocateUs" class="tm-section">
                     <h2 class="tm-text-primary">Locate Us!</h2>
                     <hr class="mb-5">
@@ -387,6 +415,7 @@
             <!-- https://dimsemenov.com/plugins/magnific-popup/ -->
             <script src="./slick/slick.min.js"></script> <!-- https://kenwheeler.github.io/slick/ -->
             <script src="./js/templatemo-script.js"></script>
+
 </body>
 
 </html>
@@ -395,7 +424,7 @@
 </div> <!-- .row -->
 </div> <!-- .container-fluid -->
 
-<script src="app.js"></script>
+
 </body>
 
 </html>
