@@ -13,9 +13,9 @@ const tidSchema = mongoose.Schema(
       required: true,
     },
 
-    owner: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+    fullName: {
+      type: String,
+      required: true,
     },
 
     time: {

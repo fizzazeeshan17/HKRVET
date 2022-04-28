@@ -28,8 +28,10 @@
     <table>
       <thead>
         <tr>
+         
           <th>Pet Name</th>
-          <th>Reason</th>
+          <th>Reason</th> 
+          <th> owner Name</th>
           <th>Date</th>
         </tr>
       </thead>
@@ -40,7 +42,7 @@
     </table>
 
     <script>
-      fetch("http://localhost:3000/api/booking")
+      fetch("http://localhost:3000/api/booking/")
         .then((res) => res.text())
         .then((out) => {
           let jsonData = JSON.parse(out);
@@ -51,6 +53,9 @@
               "</td>" +
               "<td align='right'>" +
               users.reason +
+              "</td>" +
+              "<td align='right'>" +
+              users.fullName +
               "</td>" +
               "<td align='right'>" +
               users.time;

@@ -9,13 +9,13 @@ fetch('/api/secure', {
 
 
 const bookingForm = document.querySelector("#bookingForm")
+const fullName = document.querySelector("#fullName")
 const dateInput = document.querySelector("#dateInput")
 const textareaInput = document.querySelector("#textareaInput")
 const error = document.querySelector("#error")
 const errorOwner = document.querySelector("#errorOwner")
 const errorPet = document.querySelector("#errorPet")
 const pet = document.querySelector('#pet')
-// const owner = document.querySelector('#name')
     
 bookingForm.addEventListener("submit", (e)=>{
     e.preventDefault();
@@ -23,6 +23,7 @@ bookingForm.addEventListener("submit", (e)=>{
     const bookingDetails = {
         pet: pet.value,
         reason: textareaInput.value,
+        fullName: fullName.value,
         time: dateInput.value
     }
     fetch('/api/booking/create', {

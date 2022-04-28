@@ -66,12 +66,12 @@ router.get("/:id", async (req, res) => {
 });
 
 router.put("/:id", async (req, res) => {
-  const { fullName, phone, email, password } = req.body;
+  const {phone, email, password } = req.body;
 
   try {
     const user = await User.findByIdAndUpdate(
       req.params.id,
-      { fullName, phone, email, password },
+      {phone, email, password },
       { new: true }
     );
 
@@ -97,63 +97,7 @@ router.delete("/:id", async (req, res) => {
   }
 }); 
 
- /* router.post("/login", async (req, res) => {
-  // Validate User
-  const { error } = loginValidation(req.body);
-  if (error) {
-    return res.status(400).json({ error: error.details[0].message });
-  }
 
-  // if existing email
-  const user = await User.findOne({ email: req.body.email });
-  if (!user) {
-    return res.status(400).json({ error: "No user with such email found" });
-  }
-
-  // Password correct?
-  const validPassword = await bcrypt.compare(req.body.password, user.password);
-  if (!validPassword) {
-    return res.status(400).json({ error: "Invalid password" });
-  }
-
-  // Create and assign token
-  const token = jwt.sign({ _id: user._id }, process.env.SECRET_TOKEN);
-  res.header("auth-token", token).json({ token: token, redirect: "batcave.html" });
-}); 
- */
-
-/* router.post("/login", async (req, res) => {
-  // Validate User
-  const { error } = loginValidation(req.body);
-  signale.success("inside login");
-  if (error) {
-    return res.status(400).json({ error: error.details[0].message });
-  }
-
-  // if existing email
-  const user = await User.findOne({ email: req.body.email });
-  if (!user) {
-    return res.status(400).json({ error: "Email is not found" });
-  }
-
-  // Password correct?
-  const validPassword = await bcrypt.compare(req.body.password, user.password);
-  if (!validPassword) {
-    return res.status(400).json({ error: "Invalid password" });
-  }
-
-  // Create and assign token to frontend
-  const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
-  res.header("auth-token", token).json({ token: token, redirect: "batcave" });
-});
-function MyError() {
-  Error.captureStackTrace(this, MyError);
-}
-
-new MyError().stack;
- */
-
- //muaz code 
 
  router.post('/register', async (req, res) => {
  
@@ -164,11 +108,10 @@ new MyError().stack;
         return res.status(400).json({ error: error.details[0].message });
     }
     
-    // const emailExist = await User.findOne({ email: req.body.email });
-
-    // if (emailExist) {
-    //     return res.status(400).json({error: 'Email exists'});
-    // }
+    const emailExist = await User.findOne({ email: req.body.email });
+    if (emailExist) {
+        return res.status(400).json({error: 'Email exists'});
+    }
 
     // password hashing
     const salt = await bcrypt.genSalt(10);
@@ -176,7 +119,7 @@ new MyError().stack;
  
     // user creation
     const user = new User({
-        fullName: req.body.fullName,
+        // fullName: req.body.fullName,
         phone: req.body.phone,
         email: req.body.email,
         password: hashPassword
@@ -198,25 +141,27 @@ router.post('/login', async (req,res) => {
     if(error){
         return res.status(400).json({error: error.details[0].message})
     }
-    // check if user exists
-    const user = await User.findOne({email: req.body.email});
+ 
 
+    const user = await User.findOne({email: req.body.email});
     if(!user) {
         return res.status(400).json({error: 'Email not found'});
     }
     
-    // check if password is correct
-    // const validPass = await bcrypt.compare(req.body.password, user.password);
-    // if(!validPass){
-    //     return res.status(400).json({error: "Invalid Password"})
-    // };
+  
+    const validPass = await bcrypt.compare(req.body.password, user.password);
+    if(!validPass){
+        return res.status(400).json({error: "Invalid Password"})
+    };
 
     // creating and assinging token for frontend
     const token = jwt.sign({_id:user._id}, process.env.TOKEN_SECRET)
     res.header('auth_token', token).json({token, redirect: 'batcave.html'});
 
 });
- 
+
+
 
  
+
 module.exports = router;

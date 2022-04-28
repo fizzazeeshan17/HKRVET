@@ -33,9 +33,11 @@ const addBooking = async (req, res) => {
         const booking = new Booking({
             pet: req.body.pet,
             reason: req.body.reason,
+            fullName: req.body.fullName,
             time: req.body.time
         });
         booking.save();
+        console.log(booking);
 
         res.status(201).json(booking);
     } catch (err) {
@@ -54,7 +56,7 @@ const editBooking = async (req, res) => {
     try {
         const booking = await Booking.findByIdAndUpdate(
             req.params.id,
-            { pet, reason, time },
+            { pet, reason, fullName, time },
             { new: true }
         );
         res.json(booking);

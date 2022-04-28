@@ -20,26 +20,35 @@
       <h1 class="welcomingH">Book a convenient time for you and your pet!</h1>
     </div>
     <form class="batcaveForm" id="bookingForm">
-      <label class="nameLabel">
-        Owner Name <input type="name" id="name" class="nameCss"><p class="error" id="errorOwner"></p>
-      </label>
       <br>
       <label class="petLabel">
         Pet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="pet" id="pet" class="petCss"><p class="error" id="errorPet"></p>
       </label>
-      <label class="dateLabel">
-        Date: <input type="date" id="dateInput" class="datecss">
-      </label>
       <label class="textareaLabel">
         Reason: <textarea id="textareaInput" class="textareacss"></textarea>
       </label>
+      <label class="nameLabel">
+        Owner Name <input type="name" id="fullName" class="nameCss"><p class="error" id="errorOwner"></p>
+      </label>
+      <label class="dateLabel">
+        Date: <input type="date" id="dateInput" class="datecss">
+      </label>
+
       <p id="error"></p>
       <input type="submit" id="submitBtn"/>
     </form>
+    <p id="confirm"></p>
     <script>
       document.getElementById("submitBtn").addEventListener("click", myFunction);
       function myFunction() {
-        window.location.href="vet.html";
+        const confirm = document.getElementById("confirm")
+        const nameLabel = document.getElementById("fullName").value
+        const petLabel = document.getElementById("pet").value
+        const dateLabel = document.getElementById("dateInput").value
+        const textareaLabel = document.getElementById("textareaInput").value
+        confirm.innerHTML = "Booking is confirmed for: \r" + "  Name:" + nameLabel+ "  Pet:" + petLabel +  "   Date:" + dateLabel + "   Reason:" + textareaLabel
+        
+       /*   window.location.href="vet.html";   */
       }
     </script>
     <script src="secure.js"></script>
