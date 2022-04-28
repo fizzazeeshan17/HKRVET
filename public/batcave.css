@@ -1,0 +1,66 @@
+.batcaveForm {
+  padding: 2%;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  text-align: center;
+  margin: auto;
+  border: solid green 1px;
+  box-shadow: 0 0 3px 3px rgba(5, 11, 70, 0.3);
+  border-radius: 10px;
+  width: 50%;
+  background-color: rgba(100, 169, 234, 0.1);
+}
+
+.datecss
+{
+    background-color: #f6f6f6;
+    border: none;
+    color: #0d0d0d;
+    text-align: center;
+    font-size: 18px;
+    width: 30%;
+    
+    border: 2px solid #f6f6f6; 
+}
+
+.textareacss {
+    background-color: #f6f6f6;
+    border: none;
+    color: #0d0d0d;
+    text-align: center;
+    font-size: 18px;
+    width: 30%;
+    height: 150px;
+   
+    border: 2px solid #f6f6f6;
+}
+
+#error {
+  color: red;
+}
+
+button[type="submit"] {
+    background: linear-gradient(45deg, rgb(156, 236, 37), rgb(19, 117, 215));
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 3px;
+    width: auto;
+    border: 2px solid #f6f6f6;
+
+  }
+
+.inputlogo {
+    width: 250px;
+  }
+
+  h2.active {
+    color: #0d0d0d;
+    border-bottom: 2px solid #006699;
+  }

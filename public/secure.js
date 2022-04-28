@@ -39,11 +39,9 @@ bookingForm.addEventListener("submit", (e)=>{
         }
 
     if (dateInput.value=="" || textareaInput.value=="" ){
-       error.innerHTML = "you have entered some values empty"
-    } else if (pet.value === ""){
-        errorPet.innerHTML = "You did not enter pet name"
-    } else {
-        alert('Your booking has been confirmed, please wait for a reply.')
+       error.innerHTML = "Please fill all the fields!"
+       setTimeout(()=>{error.innerHTML=""}, 2000)
+       return
     }
     // else if (owner.value === ""){
     //     errorOwner.innerHTML = "You did not enter owner name"
@@ -57,7 +55,7 @@ bookingForm.addEventListener("submit", (e)=>{
     
 
     
-// console.log('I am connected to the html file, here is your data', data )
+console.log('Connected to file', data )
    
 })
 })
