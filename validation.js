@@ -52,9 +52,20 @@ const loginValidation = (data) => {
     return schema.validate(data);
  
 };
+
+const bookingValidation = (data) => {
+  const schema = joi.object({
+    pet: joi.string().min(4).required(),
+    reason: joi.string().min(20).required(),
+    owner: joi.string.min(6).required(),
+    time: joi.date().required()
+  })
+  return schema.validate(data);
+};
  
 module.exports = {
     registerValidation,
-    loginValidation
+    loginValidation,
+    bookingValidation
 }
 

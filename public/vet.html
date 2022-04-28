@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th,
+      td {
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #d6eeee;
+      }
+    </style>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Pet Name</th>
+          <th>Reason</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody id="myData"></tbody>
+
+      <!-- _id<input name="add_id" id="add_name" cols="30" rows="10"></input> -->
+      <tbody></tbody>
+    </table>
+
+    <script>
+      fetch("http://localhost:3000/api/booking")
+        .then((res) => res.text())
+        .then((out) => {
+          let jsonData = JSON.parse(out);
+          for (let users of jsonData) {
+            myData.innerHTML +=
+              "<tr><td>" ++6t8
+              users.pet +
+              "</td>" +
+              "<td align='right'>" +
+              users.reason +
+              "</td>" +
+              "<td align='right'>" +
+              users.time;
+          }
+        })
+        .catch((err) => console.error(err));
+
+        const getUsers = () => {
+        fetch("http://localhost:3000/api/booking")
+          .then((response) => response.json())
+          .then((data) => data);
+      };     
+    </script>
+  </body>
+</html>

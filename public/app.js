@@ -76,15 +76,6 @@ loginForm.addEventListener('submit', e => {
     .then(response => {
         if(response.error){
             errorMsg.innerHTML = response.error;
-        } else if (loginDetails.email === 'muazkhan99@gmail.com' && loginDetails.password === 'Awesome1'){
-            // for this to work you have to comment out line 58 to 61 in auth.js
-            errorMsg.innerHTML = '';
-            localStorage.setItem('auth_token', response.token);
-            location.href = 'batcave.html';
-            var token = response.token;
-            var decoded = jwt_decode(token);
-            console.log(decoded);
-           
         } else {
             errMsg.innerHTML = '';
             localStorage.setItem('auth_token', response.token);

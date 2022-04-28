@@ -16,10 +16,17 @@
   </head>
   <body>
     <div class="intoTop">
-      <h1 class="welcomingH">Hey, Welcome to our page!</h1>
-      <h1 class="welcomingH">Here you can book a conviniet time for you.</h1>
+      <h1 class="welcomingH">Hello, Welcome to HKRVet!</h1>
+      <h1 class="welcomingH">Book a convenient time for you and your pet!</h1>
     </div>
     <form class="batcaveForm" id="bookingForm">
+      <label class="nameLabel">
+        Owner Name <input type="name" id="name" class="nameCss"><p class="error" id="errorOwner"></p>
+      </label>
+      <br>
+      <label class="petLabel">
+        Pet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="pet" id="pet" class="petCss"><p class="error" id="errorPet"></p>
+      </label>
       <label class="dateLabel">
         Date: <input type="date" id="dateInput" class="datecss">
       </label>
@@ -27,8 +34,14 @@
         Reason: <textarea id="textareaInput" class="textareacss"></textarea>
       </label>
       <p id="error"></p>
-      <button type="submit" class="bookButton"> Book</button>
+      <input type="submit" id="submitBtn"/>
     </form>
+    <script>
+      document.getElementById("submitBtn").addEventListener("click", myFunction);
+      function myFunction() {
+        window.location.href="vet.html";
+      }
+    </script>
     <script src="secure.js"></script>
   </body>
 </html>

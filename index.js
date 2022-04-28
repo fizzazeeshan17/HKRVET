@@ -53,6 +53,7 @@ const signale = require("signale");
 const userRoute = require("./routes/userRoutes");
 const secureRoute = require("./routes/secure");
 const bookingRoute = require("./routes/bookingRoute");
+// const vetRoute = require("./routes/vetRoutes")
 
 dotenv.config();
 
@@ -62,6 +63,7 @@ app.use(express.static("public"));
 app.use("/api/user", userRoute);
 app.use("/api/secure", secureRoute);
 app.use("/api/booking", bookingRoute);
+// app.use("/api/vet", vetRoute);
 
 mongoose.connect(
   process.env.DB_CONNECTION,
