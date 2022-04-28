@@ -17,7 +17,7 @@ bookingForm.addEventListener("submit", (e)=>{
 
 
     if (dateInput.value=="" || textareaInput.value=="" ){
-       error.innerHTML = "you have entered some values empty"
+       error.innerHTML = "Please fill all the fields!"
        setTimeout(()=>{error.innerHTML=""}, 2000)
        return
     }
@@ -29,7 +29,7 @@ bookingForm.addEventListener("submit", (e)=>{
     
 
     
-console.log('I am connected to the html file, here is your data', data )
+console.log('Connected to file', data )
    
 })
 

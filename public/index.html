@@ -2,16 +2,12 @@
 <html lang="en">
 
 <head>
-    <script src="app.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://www.google.com">
-    
-    <title>HKRVet</title>
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://www.google.com">
 
-    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
-    <meta Content-Security-Policy: default-src 'self';font-src fonts.gstatic.com;style-src 'self' fonts.googleapis.com>
+    <title>HKRVet</title>
     <link rel="stylesheet" href="page.css">
     <link rel="stylesheet" href="./slick/slick.min.css">
     <link rel="stylesheet" href="./slick/slick-theme.css">
@@ -20,18 +16,23 @@
 </head>
 
 <body>
-   
+
     <script src="app.js"></script>
     <div class="container-fluid">
+
         <div class="row">
             <div id="tm-sidebar" class="tm-sidebar">
+
                 <nav class="tm-nav">
                     <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
 
                     </button>
                     <div>
+
                         <div class="tm-brand-box">
+                            <img class="logo" src="img/logo.jpg"></a>
                             <h1 class="tm-brand">HKRVet</h1>
+
                         </div>
                         <ul id="tm-main-nav">
                             <li class="nav-item">
@@ -57,20 +58,8 @@
                                     <div class="triangle-right"></div>
                                     Login
                                 </a>
-                            </li> 
-
-                            <!-- <li>
-                                <button id="submitBtn" class="nav-link">
-                                   
-                                    Login
-                                <script>
-                                    document.getElementById("submitBtn").addEventListener("click", myFunction);
-                                    function myFunction() {
-                                      window.location.href="form.html";
-                                    }
-                                  </script>
                             </li>
- -->
+
                             <li class="nav-item">
                                 <a href="#LocateUs" class="nav-link">
                                     <div class="triangle-right"></div>
@@ -84,38 +73,44 @@
                     </footer>
                 </nav>
             </div>
-            
+
             <div class="tm-section-wrap">
                 <div id="home" class="tm-section">
                     <h2 class="tm-text-primary">Home</h2>
-                    <hr class="mb-5">
+                    <br><br><br>
                     <div class="row">
                         <img id="home-img" src="https://cdn.dribbble.com/users/321965/screenshots/4168826/1181.gif"
-                        alt="">
+                            alt="">
                     </div>
                 </div>
             </div>
-            
+        </div>
+    </div>
             <!-- About section -->
             <div class="tm-section-wrap">
-                <section  id="about" class="tm-section">
+                <section id="about" class="tm-section">
                     <h2 class="tm-text-primary">About</h2>
-                    <hr class="mb-5">
+                    <br><br><br>
                     <div class="mt-5">
-                        <h4>Vets</h4>
+                        <h4 class="mb-3 tm-mt-100">Vets</h4>
+                        <p style="text-align: justify;">At HKRVet our highly skilled Vets provide integrative and
+                            compassionate care for all kinds of pets. We treat every customer like family and
+                            every pet as if they were our own. Come visit and we'll show you how! </p>
+
+                        <br>
                         <div class="tm-carousel">
                             <div class="tm-carousel-item">
                                 <figure class="effect-honey mb-4">
-                                    <img src="https://scontent-cph2-1.xx.fbcdn.net/v/t1.6435-9/82367919_199995024729792_4253319139864608768_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=174925&_nc_ohc=sQnsu9zbtGUAX8r2NM5&_nc_ht=scontent-cph2-1.xx&oh=00_AT8CDYfR7lSKY7270NJS_Cfgi_1f8m50s8MMurmpKv_o0Q&oe=628E1019" class="image"
-                                    alt="Featured Item">
+                                    <img src="https://scontent-cph2-1.xx.fbcdn.net/v/t1.6435-9/82367919_199995024729792_4253319139864608768_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=174925&_nc_ohc=sQnsu9zbtGUAX8r2NM5&_nc_ht=scontent-cph2-1.xx&oh=00_AT8CDYfR7lSKY7270NJS_Cfgi_1f8m50s8MMurmpKv_o0Q&oe=628E1019"
+                                        class="image" alt="Featured Item">
                                     <figcaption>
                                         <ul class="tm-social">
                                             <li><a href="https://facebook.com" class="tm-social-link"><i
                                                         class="fab fa-facebook"></i></a></li>
-                                                        <li><a href="https://twitter.com" class="tm-social-link"><i
-                                                            class="fab fa-twitter"></i></a></li>
+                                            <li><a href="https://twitter.com" class="tm-social-link"><i
+                                                        class="fab fa-twitter"></i></a></li>
                                             <li><a href="https://instagram.com" class="tm-social-link"><i
-                                                class="fab fa-instagram"></i></a></li>
+                                                        class="fab fa-instagram"></i></a></li>
                                         </ul>
                                     </figcaption>
                                 </figure>
@@ -123,18 +118,17 @@
                                     <h3 class="mb-3 tm-text-primary tm-about-title">Musa Naji</h3>
                                 </div>
                             </div>
-                             <div class="tm-carousel-item">
+                            <div class="tm-carousel-item">
                                 <figure class="effect-honey mb-4">
-                                    <img src="./img/muaz.jpg" class="image"
-                                    alt="Featured Item">
+                                    <img src="./img/muaz.jpg" class="image" alt="Featured Item">
                                     <figcaption>
                                         <ul class="tm-social">
                                             <li><a href="https://facebook.com" class="tm-social-link"><i
                                                         class="fab fa-facebook"></i></a></li>
-                                                        <li><a href="https://twitter.com" class="tm-social-link"><i
-                                                            class="fab fa-twitter"></i></a></li>
+                                            <li><a href="https://twitter.com" class="tm-social-link"><i
+                                                        class="fab fa-twitter"></i></a></li>
                                             <li><a href="https://instagram.com" class="tm-social-link"><i
-                                                class="fab fa-instagram"></i></a></li>
+                                                        class="fab fa-instagram"></i></a></li>
                                         </ul>
                                     </figcaption>
                                 </figure>
@@ -145,16 +139,15 @@
 
                             <div class="tm-carousel-item">
                                 <figure class="effect-honey mb-4">
-                                    <img src="./img/saiid.jpg" class="image"
-                                    alt="Featured Item">
+                                    <img src="./img/saiid.jpg" class="image" alt="Featured Item">
                                     <figcaption>
                                         <ul class="tm-social">
                                             <li><a href="https://facebook.com" class="tm-social-link"><i
                                                         class="fab fa-facebook"></i></a></li>
-                                                        <li><a href="https://twitter.com" class="tm-social-link"><i
-                                                            class="fab fa-twitter"></i></a></li>
+                                            <li><a href="https://twitter.com" class="tm-social-link"><i
+                                                        class="fab fa-twitter"></i></a></li>
                                             <li><a href="https://instagram.com" class="tm-social-link"><i
-                                                class="fab fa-instagram"></i></a></li>
+                                                        class="fab fa-instagram"></i></a></li>
                                         </ul>
                                     </figcaption>
                                 </figure>
@@ -165,16 +158,15 @@
 
                             <div class="tm-carousel-item">
                                 <figure class="effect-honey mb-4">
-                                    <img class="image"  src="img/fizza.jpg" 
-                                    alt="Featured Item">
+                                    <img class="image" src="img/fizza.jpg" alt="Featured Item">
                                     <figcaption>
                                         <ul class="tm-social">
                                             <li><a href="https://facebook.com" class="tm-social-link"><i
                                                         class="fab fa-facebook"></i></a></li>
-                                                        <li><a href="https://twitter.com" class="tm-social-link"><i
-                                                            class="fab fa-twitter"></i></a></li>
+                                            <li><a href="https://twitter.com" class="tm-social-link"><i
+                                                        class="fab fa-twitter"></i></a></li>
                                             <li><a href="https://instagram.com" class="tm-social-link"><i
-                                                class="fab fa-instagram"></i></a></li>
+                                                        class="fab fa-instagram"></i></a></li>
                                         </ul>
                                     </figcaption>
                                 </figure>
@@ -190,10 +182,10 @@
                                         <ul class="tm-social">
                                             <li><a href="https://facebook.com" class="tm-social-link"><i
                                                         class="fab fa-facebook"></i></a></li>
-                                                        <li><a href="https://twitter.com" class="tm-social-link"><i
-                                                            class="fab fa-twitter"></i></a></li>
+                                            <li><a href="https://twitter.com" class="tm-social-link"><i
+                                                        class="fab fa-twitter"></i></a></li>
                                             <li><a href="https://instagram.com" class="tm-social-link"><i
-                                                class="fab fa-instagram"></i></a></li>
+                                                        class="fab fa-instagram"></i></a></li>
                                         </ul>
                                     </figcaption>
                                 </figure>
@@ -201,41 +193,46 @@
                                     <h3 class="mb-3 tm-text-primary tm-about-title">Ewnetu Tesfaye</h3>
                                 </div>
                             </div>
-                                    </div>
+                        </div>
 
 
-                    <div class="mt-5">
-                        <h4>Developers</h4>
-                        <div class="tm-carousel">
-                            <div class="tm-carousel-item">
-                                <figure class="effect-honey mb-4">
-                                    <img src="./img/musa.jpg" alt="Featured Item">
-                                    <figcaption>
-                                        <ul class="tm-social">
-                                            <li><a href="https://www.facebook.com/mosa.naji.927"
-                                                class="tm-social-link"><i class="fab fa-facebook"></i></a></li>
+                        <div class="mt-5">
+                            <h4 class="mb-3 tm-mt-100">Developers</h4>
+                            <p style="text-align: justify;">We are a team of five developers who want to have pets, have
+                                pets, and love pets. We know how much pet owners value good health care for their pets.
+                                Our clinic is going to give people who worry about their pet's health a breath of relief
+                                and our staff the worries of worried pet owners.</p>
+                            <br>
+                            <div class="tm-carousel">
+                                <div class="tm-carousel-item">
+                                    <figure class="effect-honey mb-4">
+                                        <img src="./img/musa.jpg" alt="Featured Item">
+                                        <figcaption>
+                                            <ul class="tm-social">
+                                                <li><a href="https://www.facebook.com/mosa.naji.927"
+                                                        class="tm-social-link"><i class="fab fa-facebook"></i></a></li>
                                                 <li><a href="https://twitter.com" class="tm-social-link"><i
-                                                        class="fab fa-twitter"></i></a></li>
-                                            <li><a href="https://instagram.com" class="tm-social-link"><i
-                                                class="fab fa-instagram"></i></a></li>
+                                                            class="fab fa-twitter"></i></a></li>
+                                                <li><a href="https://instagram.com" class="tm-social-link"><i
+                                                            class="fab fa-instagram"></i></a></li>
                                             </ul>
                                         </figcaption>
-                                </figure>
-                                <div class="tm-about-text">
-                                    <h3 class="mb-3 tm-text-primary tm-about-title">Musa Naji</h3>
+                                    </figure>
+                                    <div class="tm-about-text">
+                                        <h3 class="mb-3 tm-text-primary tm-about-title">Musa Naji</h3>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="tm-carousel-item">
-                                <figure class="effect-honey mb-4">
-                                    <img src="./img/muaz.jpg" alt="Featured Item">
-                                    <figcaption>
-                                        <ul class="tm-social">
-                                            <li><a href="https://www.facebook.com/muaz.khan.353"
-                                                class="tm-social-link"><i class="fab fa-facebook"></i></a></li>
-                                            <li><a href="https://twitter.com" class="tm-social-link"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                            <li><a href="https://instagram.com" class="tm-social-link"><i
-                                                class="fab fa-instagram"></i></a></li>
+                                <div class="tm-carousel-item">
+                                    <figure class="effect-honey mb-4">
+                                        <img src="./img/muaz.jpg" class="image" alt="Featured Item">
+                                        <figcaption>
+                                            <ul class="tm-social">
+                                                <li><a href="https://www.facebook.com/muaz.khan.353"
+                                                        class="tm-social-link"><i class="fab fa-facebook"></i></a></li>
+                                                <li><a href="https://twitter.com" class="tm-social-link"><i
+                                                            class="fab fa-twitter"></i></a></li>
+                                                <li><a href="https://instagram.com" class="tm-social-link"><i
+                                                            class="fab fa-instagram"></i></a></li>
                                             </ul>
                                         </figcaption>
                                     </figure>
@@ -245,186 +242,186 @@
                                 </div>
                                 <div class="tm-carousel-item">
                                     <figure class="effect-honey mb-4">
-                                    <img src="./img/saiid.jpg" alt="Featured Item">
-                                    <figcaption>
-                                        <ul class="tm-social">
-                                            <li><a href="https://www.facebook.com/saiid337" class="tm-social-link"><i
-                                                        class="fab fa-facebook"></i></a></li>
-                                            <li><a href="https://twitter.com" class="tm-social-link"><i
-                                                        class="fab fa-twitter"></i></a></li>
-                                            <li><a href="https://instagram.com" class="tm-social-link"><i
-                                                class="fab fa-instagram"></i></a></li>
-                                            </ul>
-                                    </figcaption>
-                                </figure>
-                                <div class="tm-about-text">
-                                    <h3 class="mb-3 tm-text-primary tm-about-title">Bin-Umar Saiid</h3>
-                                </div>
-                            </div>
-                            <div class="tm-carousel-item">
-                                <figure class="effect-honey mb-4">
-                                    <img src="./img/fizza.jpg" alt="Featured Item">
-                                    <figcaption>
-                                        <ul class="tm-social">
-                                            <li><a href="https://www.facebook.com/fizza.zeeshan.12"
-                                                    class="tm-social-link"><i class="fab fa-facebook"></i></a></li>
-                                                    <li><a href="https://twitter.com" class="tm-social-link"><i
-                                                        class="fab fa-twitter"></i></a></li>
-                                            <li><a href="https://instagram.com" class="tm-social-link"><i
-                                                class="fab fa-instagram"></i></a></li>
-                                        </ul>
-                                    </figcaption>
-                                </figure>
-                                <div class="tm-about-text">
-                                    <h3 class="mb-3 tm-text-primary tm-about-title">Fizza Zeeshan</h3>
-                                </div>
-                            </div>
-                            <div class="tm-carousel-item">
-                                <figure class="effect-honey mb-4">
-                                    <img src="./img/etw.jpg" alt="Featured Item">
-                                    <figcaption>
-                                        <ul class="tm-social">
-                                            <li><a href="https://www.facebook.com/Ewnetu12" class="tm-social-link"><i
-                                                class="fab fa-facebook"></i></a></li>
+                                        <img src="./img/saiid.jpg" alt="Featured Item">
+                                        <figcaption>
+                                            <ul class="tm-social">
+                                                <li><a href="https://www.facebook.com/saiid337"
+                                                        class="tm-social-link"><i class="fab fa-facebook"></i></a></li>
                                                 <li><a href="https://twitter.com" class="tm-social-link"><i
-                                                        class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="https://instagram.com" class="tm-social-link"><i
+                                                            class="fab fa-twitter"></i></a></li>
+                                                <li><a href="https://instagram.com" class="tm-social-link"><i
                                                             class="fab fa-instagram"></i></a></li>
-                                                        </ul>
-                                                    </figcaption>
-                                                </figure>
-                                <div class="tm-about-text">
-                                    <h3 class="mb-3 tm-text-primary tm-about-title">Ewnetu Tesfaye Abebe</h3>
+                                            </ul>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="tm-about-text">
+                                        <h3 class="mb-3 tm-text-primary tm-about-title">Bin-Umar Saiid</h3>
+                                    </div>
+                                </div>
+                                <div class="tm-carousel-item">
+                                    <figure class="effect-honey mb-4">
+                                        <img src="./img/fizza.jpg" class="image" alt="Featured Item">
+                                        <figcaption>
+                                            <ul class="tm-social">
+                                                <li><a href="https://www.facebook.com/fizza.zeeshan.12"
+                                                        class="tm-social-link"><i class="fab fa-facebook"></i></a></li>
+                                                <li><a href="https://twitter.com" class="tm-social-link"><i
+                                                            class="fab fa-twitter"></i></a></li>
+                                                <li><a href="https://instagram.com" class="tm-social-link"><i
+                                                            class="fab fa-instagram"></i></a></li>
+                                            </ul>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="tm-about-text">
+                                        <h3 class="mb-3 tm-text-primary tm-about-title">Fizza Zeeshan</h3>
+                                    </div>
+                                </div>
+                                <div class="tm-carousel-item">
+                                    <figure class="effect-honey mb-4">
+                                        <img src="./img/etw.jpg" alt="Featured Item">
+                                        <figcaption>
+                                            <ul class="tm-social">
+                                                <li><a href="https://www.facebook.com/Ewnetu12"
+                                                        class="tm-social-link"><i class="fab fa-facebook"></i></a></li>
+                                                <li><a href="https://twitter.com" class="tm-social-link"><i
+                                                            class="fab fa-twitter"></i></a></li>
+                                                <li><a href="https://instagram.com" class="tm-social-link"><i
+                                                            class="fab fa-instagram"></i></a></li>
+                                            </ul>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="tm-about-text">
+                                        <h3 class="mb-3 tm-text-primary tm-about-title">Ewnetu Tesfaye Abebe</h3>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </section>
+            </div>
+        
+
+    <div class="tm-section-wrap">
+        <div id="register" class="tm-section">
+            <h2 class="tm-text-primary">Register</h2>
+            <br><br><br>
+            <div class="row">
+                <div class="wrapper fadeInDown">
+                    <div id="formContent">
+                        <h2 class="active"> Sign Up </h2>
+
+
+                        <!-- Icon -->
+                        <div>
+                            <img src="img/logo.jpg" id="icon" alt="User Icon" class="inputlogo" />
+                        </div>
+
+                        <form id="sign-up-form">
+                            <span class="error" id="error"></span>
+
+                            <input type="text" id="sign-up-name" placeholder="Name" size="30">
+
+                            <input type="text" id="sign-up-phone" placeholder="Phone Number" size="30">
+
+                            <input type="text" id="sign-up-email" placeholder="Email" size="30">
+
+                            <input type="password" id="sign-up-password" placeholder="Password" size="30">
+                            <br><br>
+                            <button type="submit">Sign Up ✅</button>
+                        </form>
+
+
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     
-    
-    <!-- Register section -->
-     <div class="tm-section-wrap">
-        <div id="register" class="tm-section">
-            <h2 class="tm-text-primary">Register</h2>
-                    <hr class="mb-5">
-                    <div class="row">
-                       
-                        <form id="sign-up-form">
-                            <fieldset >
-                                <legend>Sign up information</legend>
-                                <div>
-                                <span class="error" id="error"></span>
-                                <p class="required">Name:</p>
-                                <input type="text" id="sign-up-name" placeholder="Your name" size="30">
-                                <p class="required">Phone Number:</p>
-                                <input type="text" id="sign-up-phone" placeholder="Your phone number" size="30">
-                                <p class="required">Email:</p>
-                                <input type="email" id="sign-up-email" placeholder="Your last name" size="30"> 
-                                <p class="required">Password:</p>
-                                <input type="password" id="sign-up-password" placeholder="Password" size="30"> 
-                                <br><br>
-                                <button type="submit">Sign Up</button>
-                            </div>
 
-                        </fieldset>
-                        
-                    </form>
+
+    <div class="tm-section-wrap">
+        <div id="login" class="tm-section">
+            <h2 class="tm-text-primary">Login</h2>
+            <br><br><br>
+            <div class="row">
+                <div class="wrapper fadeInDown">
+                    <div id="formContent">
+                        <h2 class="active"> Sign In </h2>
+
+
+                        <!-- Icon -->
+                        <div>
+                            <img src="img/logo.jpg" id="icon" alt="User Icon" class="inputlogo" />
                         </div>
-                        
-                            
-                        </div>
+
+                        <form id="login-form">
+                            <span class="error" id="errorMsg"></span>
+
+
+                            <input type="text" id="email" placeholder="Email" size="30">
+
+                            <input type="password" id="password" placeholder="Password" size="30">
+                            <br><br>
+                            <button type="submit">Sign In ✅</button>
+                        </form>
+
+
+
                     </div>
                 </div>
             </div>
-            
-            <div class="tm-section-wrap">
-                <div id="login" class="tm-section">
-                    <h2 class="tm-text-primary">Login</h2>
-                    <hr class="mb-5">
-                    <div class="row">
-                        <div class="col-xl-6 tm-login-col-l mb-4">
-                            <form id="login-form">
-                                <fieldset width = 100%>
-                                    <legend>Login information</legend>
-                                    <div>
-                                        <span class="error" id="errorMsg"></span>
-                                        <p class="required">Email:</p>
-                                        <input type="email" id="email" placeholder="Email" size="30"><p id="error"></p>
-                                        <p class="required">Password:</p>
-                                        <input type="password" id="password" placeholder="Password" size="30"><p id="error"></p>
-                                        <br><br>
-                                        <button type="submit">Login</button>
-                                    </div>
-                                </fieldset>
-                            </form>
-                            
-                            
-                        </div>
-                        <div class="col-xl-6 tm-login-col-r">
-                        </div>
-                    </div>
+        </div>
+    </div>
+
+
+    <!-- Location section -->
+    <div class="tm-section-wrap">
+        <div class="tm-parallax" data-parallax="scroll"></div>
+        <div id="LocateUs" class="tm-section">
+            <h2 class="tm-text-primary">Locate Us!</h2>
+            <br><br><br>
+            <div class="row">
+                <div class="col-xl-6 tm-loc-col-l mb-4">
+
                 </div>
-            </div> 
-            
-            <!-- Location section -->
-            <div class="tm-section-wrap">
-                <div class="tm-parallax" data-parallax="scroll"></div>
-                <div id="LocateUs" class="tm-section">
-                    <h2 class="tm-text-primary">Locate Us!</h2>
-                    <hr class="mb-5">
-                    <div class="row">
-                        <div class="col-xl-6 tm-loc-col-l mb-4">
-                            
-                        </div>
-                        <div class="col-xl-6 tm-loc-col-r">
-                            <!-- Map -->
-                            <div class="mapouter mb-4">
-                                <div class="gmap_canvas">
-                                    <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2229.380495331153!2d14.178557515205894!3d56.02940047809337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46541cb162a9ea89%3A0xba0f88eaf93a1c58!2sDjurkliniken%20Kristianstad%20Evidensia!5e0!3m2!1sen!2sse!4v1650671973759!5m2!1sen!2sse"
-                                    width="600" height="450" style="border:0;" p allowfullscreen="yes"
-                                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                </div>
-                            </div>
-                            
-                            <!-- Address -->
-                            <address class="address">
-                                Björkhemsvägen 19, 291 54 Kristianstad<br>
-                                Tel: 010-020-0340<br> 
-                                Email: info@HKRVet.com
-                                
-                            </address>
+                <div class="col-xl-6 tm-loc-col-r">
+                    <!-- Map -->
+                    <div class="mapouter mb-4">
+                        <div class="gmap_canvas">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2229.380495331153!2d14.178557515205894!3d56.02940047809337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46541cb162a9ea89%3A0xba0f88eaf93a1c58!2sDjurkliniken%20Kristianstad%20Evidensia!5e0!3m2!1sen!2sse!4v1650671973759!5m2!1sen!2sse"
+                                width="600" height="450" style="border:0;" p allowfullscreen="yes" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
+
+                    <!-- Address -->
+                    <address class="address">
+                        Björkhemsvägen 19, 291 54 Kristianstad<br>
+                        Tel: 010-020-0340<br>
+                        Email: info@HKRVet.com
+
+                    </address>
                 </div>
             </div>
-            
-            
-            
-            
-            
-            <script src="app.js"></script>
-            <script src="./js/jquery-3.4.1.min.js"></script> <!-- https://jquery.com/ -->
-            <script src="./js/jquery.singlePageNav.min.js"></script>
-            <!-- https://github.com/ChrisWojcik/single-page-nav -->
-            <script src="./js/parallax/parallax.min.js"></script> <!-- https://pixelcog.github.io/parallax.js/ -->
-            <script src="./js/imagesloaded.pkgd.min.js"></script> <!-- https://imagesloaded.desandro.com/ -->
-            <script src="./js/isotope.pkgd.min.js"></script> <!-- https://isotope.metafizzy.co/ -->
-            <script src="./js/jquery.magnific-popup.min.js"></script>
-            <!-- https://dimsemenov.com/plugins/magnific-popup/ -->
-            <script src="./slick/slick.min.js"></script> <!-- https://kenwheeler.github.io/slick/ -->
-            <script src="./js/templatemo-script.js"></script>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script src="./js/jquery-3.4.1.min.js"></script> <!-- https://jquery.com/ -->
+    <script src="./js/jquery.singlePageNav.min.js"></script>
+    <script src="./js/parallax/parallax.min.js"></script> <!-- https://pixelcog.github.io/parallax.js/ -->
+    <script src="./js/imagesloaded.pkgd.min.js"></script> <!-- https://imagesloaded.desandro.com/ -->
+    <script src="./js/isotope.pkgd.min.js"></script> <!-- https://isotope.metafizzy.co/ -->
+    <script src="./js/jquery.magnific-popup.min.js"></script>
+    <!-- https://dimsemenov.com/plugins/magnific-popup/ -->
+    <script src="./slick/slick.min.js"></script> <!-- https://kenwheeler.github.io/slick/ -->
+    <script src="./js/templatemo-script.js"></script>
 
 </body>
 
 </html>
 
-</div> <!-- .tm-main -->
-</div> <!-- .row -->
-</div> <!-- .container-fluid -->
+
 
 
 </body>

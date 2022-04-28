@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
-<script src="http://www.google.com/recaptcha/api.js?onload=myCallBack&render=explicit" async defer></script>
-<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 
-'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://www.google.com">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta Content-Security-Policy: default-src 'self';font-src fonts.gstatic.com;style-src 'self' fonts.googleapis.com>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Batcave</title>
-    <link rel="stylesheet" href="page.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div class="intoTop">
-      <h1 class="welcomingH">Hey, Welcome to our page!</h1>
-      <h1 class="welcomingH">Here you can book a conviniet time for you.</h1>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking</title>
+  <link rel="stylesheet" href="batcave.css" />
+
+</head>
+
+<body>
+  <div class="batcaveForm">
+
+    <h1 class="active">Welcome to HKRVet!</h1>
+    <h2 class="active">Book a convenient time for you and your pet!</h2>
+    <!-- Icon -->
+    <div>
+      <img src="img/vets.jpg" id="icon" alt="User Icon" class="inputlogo" />
     </div>
-    <form class="batcaveForm" id="bookingForm">
-      <label class="dateLabel">
-        Date: <input type="date" id="dateInput" class="datecss">
-      </label>
-      <label class="textareaLabel">
-        Reason: <textarea id="textareaInput" class="textareacss"></textarea>
-      </label>
+
+    <form id="bookingForm">
       <p id="error"></p>
-      <button type="submit" class="bookButton"> Book</button>
-    </form>
-    <script src="secure.js"></script>
-  </body>
+      <input type="date" id="dateInput" class="datecss" placeholder="Date Number" size="30">
+      <br><br>
+      <textarea id="textareaInput" class="textareacss" placeholder="Enter reason of visit" size="30"></textarea>
+      <br><br>
+      <button type="submit">Book Time 🗓️</button>
+  </div>
+  </form>
+
+  <script src="secure.js"></script>
+
+</body>
+
 </html>
