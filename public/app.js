@@ -76,7 +76,15 @@ loginForm.addEventListener("submit", (e) => {
         errorMsg.innerHTML = "";
         localStorage.setItem("auth_token", response.token);
         location.href = "vet.html";
-      } else {
+      } else if (
+        loginDetails.email === "admin@HKRVET.com" && loginDetails.password === "admin1")
+      { 
+        errorMsg.innerHTML = "";
+        localStorage.setItem("auth_token", response.token);
+        location.href = "admin.html";
+      }
+      
+      else {
         errorMsg.innerHTML = "";
         localStorage.setItem("auth_token", response.token);
         location.href = response.redirect;
