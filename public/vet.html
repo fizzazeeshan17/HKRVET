@@ -1,57 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Animals</title>
-    <link rel="stylesheet" href="vet.css">
-  </head>
 
-  <body>
-    <table class="container">
-      <thead>
-        <div class="header">Animals</div>
-        <tr>
-          <th><h1>Pet Name</h1></th>
-          <th><h1>Reason</h1></th>
-          <th><h1>Pet Owner</h1></th>
-          <th><h1>Date</h1></th>
-        </tr>
-      </thead>
-      <tbody id="myData"></tbody>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin</title>
+  <link rel="stylesheet" href="vet.css">
+  <link href="adminBookings.html" rel="import" />
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
 
-      <!-- _id<input name="add_id" id="add_name" cols="30" rows="10"></input> -->
-      <tbody></tbody>
-    </table>
 
-    <script>
-      fetch("http://localhost:3000/api/booking/")
-        .then((res) => res.text())
-        .then((out) => {
-          let jsonData = JSON.parse(out);
-          for (let users of jsonData) {
-            myData.innerHTML +=
-              "<tr><td>" +
-              users.pet +
-              "</td>" +
-              "<td align='right'>" +
-              users.reason +
-              "</td>" +
-              "<td align='right'>" +
-              users.fullName +
-              "</td>" +
-              "<td align='right'>" +
-              users.time;
-          }
-        })
-        .catch((err) => console.error(err));
+<body>
+  <h2 class="header">Bookings</h2>
+  <br>
+  <div class="spinner-border" role="status" id="loading">
 
-      const getUsers = () => {
-        fetch("http://localhost:3000/api/booking")
-          .then((response) => response.json())
-          .then((data) => data);
-      };
-    </script>
-  </body>
+
+  </div>
+
+  <table id="table" class="container">
+  </table>
+
+
+
+  <br><br><br><br>
+
+
+
+  <script>
+    const api_url =
+      "http://localhost:3000/api/booking/";
+
+    async function getapi(url) {
+      const response = await fetch(url);
+      var data = await response.json();
+      console.log(data);
+      if (response) {
+        hideloader();
+      }
+      show(data);
+    }
+
+    getapi(api_url);
+
+
+    function hideloader() {
+      document.getElementById('loading').style.display = 'none';
+    }
+
+    function show(data) {
+      let tab =
+        `<tr>
+           <th>Pet ID</th>
+           <th>Pet Name</th>
+           <th>Reason</th>
+           <th>Pet Owner</th>
+           <th>Date</th>
+         
+ 
+           </tr>`;
+      for (let r of data) {
+
+        tab += `<tr>
+       <td>${r._id} </td>
+       <td>${r.pet} </td>
+       <td>${r.reason}</td>
+       <td>${r.fullName}</td>
+       <td>${r.time}</td>
+      
+    
+      
+      
+   </tr>`;
+      }
+
+      // Setting innerHTML as tab variable
+      document.getElementById("table").innerHTML = tab;
+    }
+
+
+
+
+
+
+    const getUsers = () => {
+      fetch("/api/booking")
+        .then((response) => response.json())
+        .then((data) => data);
+    };
+
+
+
+
+  </script>
+</body>
+
+</html>
+</body>
+
 </html>
