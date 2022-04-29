@@ -23,5 +23,4 @@ const vetSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Vet", vetSchema)
-
+module.exports = mongoose.model("Vet", vetSchema);

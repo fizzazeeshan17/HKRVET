@@ -1,25 +1,3 @@
-/* const jwt = require("jsonwebtoken");
-
-module.exports = function (req, res, next) {
-  const token = req.header("auth-token");
-  if (!token) {
-    return res.status(401).json("Access Denied");
-  }
-
-  try {
-    console.log(token);
-    const verified = jwt.verify(token, process.env.SECRET_TOKEN);
-    console.log(verified);
-    req.user = verified;
-    next();
-  } catch (error) {
-    console.log(error);
-    res.status(400).json("Invalid Token");
-  }
-};
- */
-
-
 const jwt = require("jsonwebtoken");
 
 //verify token for each call we make
@@ -29,16 +7,13 @@ module.exports = function (req, res, next) {
     return res.status(401).json("Access Denied");
   }
 
-  //to set the user throughout all application do req.user(verified)
   try {
     console.log(token);
     const verified = jwt.verify(token, process.env.TOKEN_SECRET);
     req.user = verified;
-    next(); //this makes sure that the node process isnt interupted
+    next();
   } catch (error) {
     console.log(error);
     res.status(400).json("Invalid Token");
   }
 };
-
-//this is going to see that every api call we make has a token inside of it

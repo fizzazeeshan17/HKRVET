@@ -1232,7 +1232,6 @@ select:not([multiple]) {
   margin-bottom: -170px;
 }
 
-
 #error {
   color: red;
 }
