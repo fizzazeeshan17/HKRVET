@@ -1,57 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <style>
-      body {
-        font-family: "Kumbh Sans", sans-serif;
-        font-size: 16px;
-      }
-
-      .header {
-        background: linear-gradient(
-          45deg,
-          rgb(156, 236, 37),
-          rgb(19, 117, 215)
-        );
-        color: white;
-        font-size: 1.5rem;
-        width: 75%;
-        padding: 1rem;
-        text-align: center;
-        text-transform: uppercase;
-      }
-
-      table {
-        border-collapse: collapse;
-        width: 75%;
-      }
-
-      th,
-      td {
-        text-align: center;
-        padding: 8px;
-      }
-
-      tr:nth-child(even) {
-        background-color: #d6eeee;
-      }
-    </style>
-
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animals</title>
+    <link rel="stylesheet" href="vet.css">
   </head>
 
   <body>
-    <table>
+    <table class="container">
       <thead>
         <div class="header">Animals</div>
         <tr>
-          <th>Pet Name</th>
-          <th>Reason</th>
-          <th>Pet Owner</th>
-          <th>Date</th>
+          <th><h1>Pet Name</h1></th>
+          <th><h1>Reason</h1></th>
+          <th><h1>Pet Owner</h1></th>
+          <th><h1>Date</h1></th>
         </tr>
       </thead>
       <tbody id="myData"></tbody>

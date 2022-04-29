@@ -401,7 +401,7 @@ hr {
 }
 
 .tm-section {
-  padding: 50px 70px 50px 0;
+  padding: 50px 50px 0px 0px;
 }
 
 #gallery,
@@ -1225,11 +1225,9 @@ select:not([multiple]) {
   }
 }
 #home-img {
-  width: 500;
-  height: 400;
-  margin-top: -30px;
-  margin-left: 230px;
-  margin-bottom: -170px;
+  width: 800;
+  height: 600;
+  margin-left: 170px;
 }
 
 #error {
