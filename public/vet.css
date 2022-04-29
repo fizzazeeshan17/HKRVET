@@ -90,6 +90,10 @@ h2 a {
   padding: 0 0 8em 0;
 }
 
+.update-form{
+  text-align: center;
+}
+
 .container td,
 .container th {
   padding-bottom: 2%;

@@ -21,11 +21,14 @@
    
     <table id="table" class="container">
     </table>
-  
-    <input class="fields" placeholder="_ID" name="update_id" id="update_id" ></input>
-      <input class="fields" placeholder="Phone Number" name="update_phone" id="update_phone" ></input>
-      <input class="fields" placeholder="Email" name="update_email" id="update_email" ></input>
-      <i id="table" onclick="updateUser(update_id, update_phone, update_email);"><i class='fas fa-edit' style='font-size:26px;color:#FB667A'></i></td></i>
+    
+    <div class="update-form">
+      <input class="fields" placeholder="_ID" name="update_id" id="update_id" ></input>
+        <input class="fields" placeholder="Phone Number" name="update_phone" id="update_phone" ></input>
+        <input class="fields" placeholder="Email" name="update_email" id="update_email" ></input>
+        <i id="table" onclick="updateUser(update_id, update_phone, update_email);"><i class='fas fa-edit' style='font-size:26px;color:#FB667A'></i></td></i>
+
+    </div>
   
    
     <br><br><br><br>
@@ -94,6 +97,8 @@
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(updateData),
           }).then((response) => getUsers());
+      location.href = "adminUsers.html"
+
       }
   
       
@@ -108,6 +113,8 @@
           method: "DELETE",
         });
         getusers();
+      location.href = "adminUsers.html"
+
       };
   
     </script>
