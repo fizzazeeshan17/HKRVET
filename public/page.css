@@ -26,14 +26,14 @@ a:hover {
 
 /* BASIC */
 
-html {
+/* html {
   background-color: #006699;
 }
 
 body {
   font-family: "Poppins", sans-serif;
   height: 100vh;
-}
+} */
 
 a {
   color: #92badd;
@@ -1136,12 +1136,12 @@ select:not([multiple]) {
   padding: 50px 70px 20px 0;
 }
 
-@media (max-width: 1400px) {
+/* @media (max-width: 1400px) {
   .tm-section-wrap {
     width: calc(100% - 630px);
     margin-left: 630px;
   }
-}
+} */
 
 @media (max-width: 1200px) {
   .tm-col-home {
@@ -1197,10 +1197,10 @@ select:not([multiple]) {
     left: -280px;
   }
 
-  .tm-section-wrap {
+  /* .tm-section-wrap {
     width: calc(100% - 280px);
     margin-left: 280px;
-  }
+  } */
 
   .tm-section {
     padding-left: 30px;
