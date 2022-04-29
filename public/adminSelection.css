@@ -78,3 +78,11 @@ section.light {
 section.dark {
   background: linear-gradient(45deg, rgb(156, 236, 37), rgb(19, 117, 215));
 }
+
+.logo {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 120px;
+  text-align: center;
+}
