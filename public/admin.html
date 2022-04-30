@@ -12,18 +12,16 @@
 
 
 <body>
-  <img src="img/logo.jpg" id="icon" alt="User Icon" class="logo" />
+  <img src="img/logo.jpg" id="icon" alt="User Icon" class="logo"/>
+  <button type="submit" class="buttonHome" onclick="home()">🏠</button>
   <br>
-  <h1 class="heading">Welcome Administrator! What Data do you want to see?</h1>
+  <h1 class="heading">Welcome Administrator!</h1>
   <div>
    
 </div>
   <section class="dark">
-
     <button class="button" onclick="user()">Users</button>
-  </section>
-
-  <section class="light">
+    <br>
     <button class="button" onclick="booking()">Bookings</button>
   </section>
   <script>
@@ -34,6 +32,11 @@
     function booking() {
       window.location.href = "adminBookings.html"
     }
+
+    function home(){
+      window.location.href = "index.html"
+    }
+
   </script>
 
 </body>
