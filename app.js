@@ -4,9 +4,9 @@ const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const signale = require("signale");
-const userRoute = require("../routes/userRoutes");
-const secureRoute = require("../routes/secure");
-const bookingRoute = require("../routes/bookingRoute");
+const userRoute = require("./routes/userRoutes");
+const secureRoute = require("./routes/secure");
+const bookingRoute = require("./routes/bookingRoute");
 
 dotenv.config();
 
