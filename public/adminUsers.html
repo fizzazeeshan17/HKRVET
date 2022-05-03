@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Users</title>
+  <link rel="stylesheet" href="vet.css">
+  <link href="adminBookings.html" rel="import" />
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+
+
+<body>
+  <img src="img/logo.jpg" id="icon" alt="User Icon" class="logo" />
+  <button type="submit" class="buttonHome" onclick="home()">🏠</button>
+  <h2 class="header">Users</h2>
+  <br>
+  <div class="spinner-border" role="status" id="loading">
+
+
+  </div>
+
+  <table id="table" class="container">
+  </table>
+
+  <div class="update-form">
+    <input class="fields" placeholder="_ID" name="update_id" id="update_id"></input>
+    <input class="fields" placeholder="Phone Number" name="update_phone" id="update_phone"></input>
+    <input class="fields" placeholder="Email" name="update_email" id="update_email"></input>
+    <i id="table" onclick="updateUser(update_id, update_phone, update_email);"><i class='fas fa-edit'
+        style='font-size:26px;color:#FB667A'></i></td></i>
+
+  </div>
+
+
+  <br><br><br><br>
+
+  <script>
+    const api_url =
+      "http://localhost:3000/api/user/";
+
+    async function getapi(url) {
+      const response = await fetch(url);
+      var data = await response.json();
+      console.log(data);
+      if (response) {
+        hideloader();
+      }
+      show(data);
+    }
+
+    getapi(api_url);
+
+
+    function hideloader() {
+      document.getElementById('loading').style.display = 'none';
+    }
+
+    function show(data) {
+      let tab =
+        `<tr>
+          <th>_ID</th>
+          <th>Phone Number</th>
+          <th>Email</th>
+          <th>Delete</th>
+          
+         
+          </tr>`;
+      for (let r of data) {
+
+        tab += `<tr>
+      <td>${r._id} </td>
+      <td>${r.phone}</td>
+      <td>${r.email}</td>
+     
+   
+       <td><i class='fas fa-trash-alt' style='font-size:26px;color:#FB667A' onclick="deleteUser('${r._id}')"></i></td>
+     
+  </tr>`;
+      }
+
+      // Setting innerHTML as tab variable
+      document.getElementById("table").innerHTML = tab;
+    }
+
+
+    const getUpdateDataFromUI = () => {
+      const updateData = new Object();
+      updateData._id = document.getElementById("update_id").value
+      updateData.phone = document.getElementById("update_phone").value
+      updateData.email = document.getElementById("update_email").value
+      return updateData;
+    }
+
+    function updateUser() {
+      const updateData = getUpdateDataFromUI();
+      fetch("/api/user/" + updateData._id, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updateData),
+      }).then((response) => getUsers());
+      location.href = "adminUsers.html"
+
+    }
+
+
+    const getusers = () => {
+      fetch("http://localhost:3000/api/user/")
+        .then(response => response.json())
+        .then(data => show(data));
+    };
+
+    const deleteUser = (_id) => {
+      fetch("http://localhost:3000/api/user/" + _id, {
+        method: "DELETE",
+      });
+      getusers();
+      location.href = "adminUsers.html"
+
+    };
+
+    function home() {
+      window.location.href = "index.html"
+    }
+
+  </script>
+</body>
+
+</html>
+</body>
+
+</html>

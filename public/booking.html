@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking</title>
+  <link rel="stylesheet" href="booking.css" />
+
+</head>
+
+<body>
+  <img src="img/logo.jpg" id="icon" alt="User Icon" class="logo"/>
+  <button type="submit" class="buttonHome" onclick="home()">🏠</button>
+  <div class="bookingForm">
+
+    <h1 class="active">Welcome to HKRVet!</h1>
+    <h2 class="active">Book a convenient time for you and your pet!</h2>
+    <!-- Icon -->
+    <div>
+      <img src="img/vets.jpg" id="icon" alt="User Icon" class="inputlogo" />
+    </div>
+
+   <form id="bookingForm">
+    <p id="error"></p>
+      <br>
+        <input type="pet" id="pet" class="fields" placeholder="Pet Name" size="30"><p class="error" id="errorPet"></p>
+      </label>
+        <br><br>
+        <textarea id="textareaInput" class="textareacss" placeholder="Enter reason of visit" size="30"></textarea>
+        <br><br>
+        <input type="name" id="fullName" class="fields" placeholder="Owner name" size="30"><p class="error" id="errorOwner"></p>
+        <br><br>
+        <input type="date" id="dateInput" class="datecss" placeholder="Date" size="30"></input>
+        <br><br>
+        
+      <button type="submit" id="submitBtn"/>Book Time 🗓️</button>
+    </form>
+    <p id="confirm"></p>
+    <script>
+      document.getElementById("submitBtn").addEventListener("click", myFunction);
+      function myFunction() {
+        const confirm = document.getElementById("confirm")
+        const nameLabel = document.getElementById("fullName").value
+        const petLabel = document.getElementById("pet").value
+        const dateLabel = document.getElementById("dateInput").value
+        const textareaLabel = document.getElementById("textareaInput").value
+        confirm.innerHTML = "Booking is confirmed for: \n" +  " \n Name: \n" + nameLabel+ "  Pet: \n" + petLabel +  "   Date: \n" + dateLabel + "   Reason: \n" + textareaLabel
+     
+       
+      } 
+
+      function home(){
+      window.location.href = "index.html"
+    }
+    </script>
+    
+    <script src="secure.js"></script>
+  </body>
+</html>
+
+
+
+
+  
+
+    
+    
+    
+     
