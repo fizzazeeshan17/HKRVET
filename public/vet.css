@@ -90,7 +90,7 @@ h2 a {
   padding: 0 0 8em 0;
 }
 
-.update-form{
+.update-form {
   text-align: center;
 }
 
@@ -153,7 +153,7 @@ h2 a {
   }
 }
 
-.buttonHome{
+.buttonHome {
   width: 90px;
   height: 75px;
   background: linear-gradient(45deg, rgb(156, 236, 37), rgb(19, 117, 215));
@@ -163,16 +163,12 @@ h2 a {
   font-weight: var(--font-weight-7);
 }
 
-
 .buttonHome:hover {
   cursor: pointer;
   color: var(--blue-0);
   color: white;
   background: linear-gradient(45deg, rgb(37, 40, 236), rgb(179, 159, 15));
   border-radius: var(--radius-2);
-  
-   
-
 }
 .logo {
   position: absolute;

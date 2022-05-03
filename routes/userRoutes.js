@@ -3,8 +3,6 @@ const User = require("../models/User");
 const { registerValidation, loginValidation } = require("../validation");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const signale = require("signale");
-const jwt_decode = require("jwt-decode");
 
 router.get("/", async (req, res) => {
   try {
@@ -63,7 +61,6 @@ router.delete("/:id", async (req, res) => {
 });
 
 router.post("/register", async (req, res) => {
-  // user
   const { error } = registerValidation(req.body);
 
   if (error) {
@@ -79,9 +76,7 @@ router.post("/register", async (req, res) => {
   const salt = await bcrypt.genSalt(10);
   const hashPassword = await bcrypt.hash(req.body.password, salt);
 
-  // user creation
   const user = new User({
-    // fullName: req.body.fullName,
     phone: req.body.phone,
     email: req.body.email,
     password: hashPassword,
@@ -113,9 +108,8 @@ router.post("/login", async (req, res) => {
     return res.status(400).json({ error: "Invalid Password" });
   }
 
-  // creating and assinging token for frontend
   const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
-  res.header("auth_token", token).json({ token, redirect: "batcave.html" });
+  res.header("auth_token", token).json({ token, redirect: "booking.html" });
 });
 
 module.exports = router;

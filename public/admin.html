@@ -1,51 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="adminSelection.css" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="adminSelection.css" />
+    <title>Admin Choice</title>
+  </head>
 
-  <title>Admin Choice</title>
-</head>
+  <body>
+    <img src="img/logo.jpg" id="icon" alt="User Icon" class="logo" />
+    <button type="submit" class="buttonHome" onclick="home()">🏠</button>
+    <br />
+    <h1 class="heading">Welcome Administrator!</h1>
+    <div></div>
+    <section class="dark">
+      <button class="button" onclick="user()">Users</button>
+      <br />
+      <button class="button" onclick="booking()">Bookings</button>
+      <br />
+      <button class="button" onclick="statistics()">Statistics</button>
+    </section>
+    <script>
+      function user() {
+        window.location.href = "adminUsers.html";
+      }
 
+      function booking() {
+        window.location.href = "adminBookings.html";
+      }
 
-<body>
-  <img src="img/logo.jpg" id="icon" alt="User Icon" class="logo"/>
-  <button type="submit" class="buttonHome" onclick="home()">🏠</button>
-  <br>
-  <h1 class="heading">Welcome Administrator!</h1>
-  <div>
-   
-</div>
-  <section class="dark">
-    <button class="button" onclick="user()">Users</button>
-    <br>
-    <button class="button" onclick="booking()">Bookings</button>
-    <br>
-    <button class="button" onclick="statistics()">Statistics</button>
-    
-  </section>
-  <script>
-    function user() {
-      window.location.href = "adminUsers.html";
-    }
+      function statistics() {
+        window.location.href = "statistics.html";
+      }
 
-    function booking() {
-      window.location.href = "adminBookings.html"
-    }
-
-    function statistics() {
-      window.location.href = "statistics.html"
-    }
-
-    function home(){
-      window.location.href = "index.html"
-    }
-
-  </script>
-
-</body>
-
+      function home() {
+        window.location.href = "index.html";
+      }
+    </script>
+  </body>
 </html>

@@ -1,7 +1,6 @@
 const { date } = require("@hapi/joi/lib/template");
 const mongoose = require("mongoose");
-const mongooseDateFormat = require('mongoose-date-format');
-
+const mongooseDateFormat = require("mongoose-date-format");
 
 const tidSchema = mongoose.Schema({
   pet: {
@@ -22,10 +21,9 @@ const tidSchema = mongoose.Schema({
   time: {
     type: Date,
     required: true,
-    default: new Date() 
+    default: new Date(),
   },
 });
 
 tidSchema.plugin(mongooseDateFormat);
 module.exports = mongoose.model("Tid", tidSchema);
-
