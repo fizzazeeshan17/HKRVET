@@ -1,89 +1,34 @@
-var signupForm = document.querySelector("#sign-up-form");
-var loginForm = document.querySelector("#login-form");
+const express = require("express");
+const PORT = process.env.PORT || 3000;
+const app = express();
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const signale = require("signale");
+const userRoute = require("../routes/userRoutes");
+const secureRoute = require("../routes/secure");
+const bookingRoute = require("../routes/bookingRoute");
 
-var signupPhone = document.querySelector("#sign-up-phone");
-var signupEmail = document.querySelector("#sign-up-email");
-var signupPassword = document.querySelector("#sign-up-password");
+dotenv.config();
 
-var loginEmail = document.querySelector("#email");
-var loginPassword = document.querySelector("#password");
+app.use(express.json());
 
-// error handling
-var errMsg = document.querySelector("#error");
-var errorMsg = document.querySelector("#errorMsg");
+app.use(express.static("public"));
+app.use("/api/user", userRoute);
+app.use("/api/secure", secureRoute);
+app.use("/api/booking", bookingRoute);
 
-// sign up form
-signupForm.addEventListener("submit", (e) => {
-  e.preventDefault();
+mongoose.connect(
+  process.env.DB_CONNECTION,
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  (error, db) => {
+    if (error) {
+      console.log(error);
+    } else {
+      signale.success("connected successfully to mongoose");
+    }
+  }
+);
 
-  const signUpDetails = {
-    phone: signupPhone.value,
-    email: signupEmail.value,
-    password: signupPassword.value,
-  };
-
-  console.log(signupForm);
-  fetch("/api/user/register", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(signUpDetails),
-  })
-    .then((res) => res.json())
-    .then((response) => {
-      if (response.error) {
-        errMsg.innerHTML = response.error;
-      } else {
-        errMsg.innerHTML = "";
-        localStorage.setItem("auth_token", response.token);
-        location.href = response.redirect;
-      }
-    });
-});
-
-loginForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const loginDetails = {
-    email: loginEmail.value,
-    password: loginPassword.value,
-  };
-
-  fetch("/api/user/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(loginDetails),
-  })
-    .then((res) => res.json())
-    .then((response) => {
-      if (response.error) {
-        errorMsg.innerHTML = response.error;
-      } else if (
-        loginDetails.email === "musa@HKRVET.com" ||
-        loginDetails.email === "fizza@HKRVET.com" ||
-        loginDetails.email === "saiid@HKRVET.com" ||
-        loginDetails.email === "muaz@HKRVET.com" ||
-        loginDetails.email === "ewnetu@HKRVET.com" ||
-        (loginDetails.email === "max@HKRVET.com" &&
-          loginDetails.password === "abc123")
-      ) {
-        errorMsg.innerHTML = "";
-        localStorage.setItem("auth_token", response.token);
-        location.href = "vet.html";
-      } else if (
-        loginDetails.email === "admin@HKRVET.com" &&
-        loginDetails.password === "admin1"
-      ) {
-        errorMsg.innerHTML = "";
-        localStorage.setItem("auth_token", response.token);
-        location.href = "admin.html";
-      } else {
-        errorMsg.innerHTML = "";
-        localStorage.setItem("auth_token", response.token);
-        location.href = response.redirect;
-      }
-    });
+app.listen(PORT, () => {
+  signale.success("listening on port " + PORT);
 });
