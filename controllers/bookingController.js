@@ -1,4 +1,5 @@
-const Booking = require("../models/Tid");
+const Booking = require("../models/Appointment");
+const Time = require("../models/Time");
 
 const getBookings = async (req, res) => {
   try {
@@ -29,14 +30,19 @@ const getBookingById = async (req, res) => {
 
 const addBooking = async (req, res) => {
   try {
+    const newTime = new Time({
+      date: req.body.date,
+      time: req.body.time,
+    });
+
+    await newTime.save();
     const booking = new Booking({
       pet: req.body.pet,
       reason: req.body.reason,
       fullName: req.body.fullName,
-      time: req.body.time,
+      time: newTime,
     });
     booking.save();
-    console.log(booking);
 
     res.status(201).json(booking);
   } catch (err) {
