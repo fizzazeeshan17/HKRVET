@@ -2,7 +2,7 @@ const { date } = require("@hapi/joi/lib/template");
 const mongoose = require("mongoose");
 const mongooseDateFormat = require("mongoose-date-format");
 
-const tidSchema = mongoose.Schema({
+const appointmentSchema = mongoose.Schema({
   pet: {
     type: String,
     required: true,
@@ -19,11 +19,10 @@ const tidSchema = mongoose.Schema({
   },
 
   time: {
-    type: Date,
-    required: true,
-    default: new Date(),
+    type: mongoose.Types.ObjectId,
+    ref: "Time",
   },
 });
 
-tidSchema.plugin(mongooseDateFormat);
-module.exports = mongoose.model("Tid", tidSchema);
+appointmentSchema.plugin(mongooseDateFormat);
+module.exports = mongoose.model("Appointment", appointmentSchema);
