@@ -1,5 +1,14 @@
 @import "https://unpkg.com/open-props";
 
+body {
+    border: solid green 1px;
+    box-shadow: 0 0 3px 3px rgb(5 11 70 / 30%);
+    border-radius: 10px;
+    display: block;
+    margin: 8px;
+    min-height: 100%;
+}
+
 .button {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -46,22 +55,25 @@
 }
 
 .heading {
-  font-size: 75px;
+  margin: 70px 25px;
+  font-size: 3em;
   text-align: center;
   background-color: var(--gray-0);
   color: rgb(6, 74, 143);
 }
+
+@media (max-width: 450px) {
+  .heading {
+    font-size: 1.5em;
+  }
+}
+
 html {
   height: 100%;
 }
 
-body {
-  min-height: 100%;
-  display: grid;
-  margin: 0;
-}
-
 section {
+  padding: 50px 0;
   display: grid;
   -ms-flex-line-pack: center;
   align-content: center;
@@ -87,6 +99,8 @@ section.dark {
   border-radius: var(--radius-2);
   font-size: var(--font-size-fluid-1);
   font-weight: var(--font-weight-7);
+  margin-left: 5px;
+  margin-top: 5px;
 }
 
 
@@ -103,8 +117,8 @@ section.dark {
 
 .logo {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 15px;
+  right: 15px;
   height: 120px;
   text-align: center;
 }
