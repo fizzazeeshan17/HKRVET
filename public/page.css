@@ -521,9 +521,6 @@ hr {
 }
 
 /* Home section */
-#home {
-  min-height: 100vh;
-}
 .tm-col-home-l {
   width: calc(100% - 300px);
 }
@@ -1095,7 +1092,6 @@ select:not([multiple]) {
 
 .address {
   position: relative;
-  height: 360px;
   width: 100%;
 }
 .tm-contact-links {
@@ -1229,6 +1225,7 @@ select:not([multiple]) {
 }
 #home-img {
   width: 100%;
+  max-width: 750px;
 }
 
 #error {
