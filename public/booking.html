@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Booking</title>
   <link rel="stylesheet" href="booking.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 </head>
 
@@ -31,11 +32,16 @@
         <br><br>
         <input type="name" id="fullName" class="fields" placeholder="Owner name" size="30"><p class="error" id="errorOwner"></p>
         <br><br>
-        <input type="datetime-local" id="dateInput" class="datecss" placeholder="Date" size="30"></input>
-
+        <input type="date" id="dateInput" class="datecss" placeholder="Date" size="30"></input>
+        <div> <button value="9:00-9:30">"9:00-9:30"</button>
+          <button value="9:30-10:00">"9:30-10:00"</button>
+          <button value="10:00-10:30">"10:00-10:30"</button>
+          <button value="10:30-11:00">"10:30-11:00"</button>
+          <button value="11:00-11:30">"11:00-11:30"</button>
+          <button  value="11:30-12:00">"11:30-12:00"</button></div>
         <br><br>
         
-      <button type="submit" id="submitBtn"/>Book Time 🗓️</button>
+      <button type="submit" id="submitBtn"/>Submit 🗓️</button>
     </form>
     <p id="confirm"></p>
     <script>
@@ -50,22 +56,37 @@
      
        
       } 
+      var todayDate = new Date();
+      var month = todayDate.getMonth() + 1;
+      var maxMonth = month + 2; 
+      var year = todayDate.getUTCFullYear() - 0; 
+      var tdate = todayDate.getDate();
+      if(month < 10){
+        month = "0" + month
+      }
+      if(maxMonth < 10){
+        maxMonth = "0" + maxMonth
+      }
+      if(tdate < 10){
+        tdate = "0" + tdate;
+      }
+      var minDate = year + "-" + month + "-" + tdate;
+      var maxDate = year + "-" + maxMonth + "-" + tdate;
+      document.getElementById("dateInput").setAttribute("min", minDate);
+      document.getElementById("dateInput").setAttribute("max", maxDate);
 
-      function home(){
+    function home(){
       window.location.href = "index.html"
     }
+    </script>
+    <script>
+      $("button").click(function() {
+          var fired_button = $(this).val();
+          alert(fired_button);
+      });
+    
     </script>
     
     <script src="secure.js"></script>
   </body>
 </html>
-
-
-
-
-  
-
-    
-    
-    
-     

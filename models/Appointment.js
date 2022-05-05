@@ -1,3 +1,4 @@
+const { required } = require("@hapi/joi/lib/base");
 const { date } = require("@hapi/joi/lib/template");
 const mongoose = require("mongoose");
 const mongooseDateFormat = require("mongoose-date-format");
@@ -17,8 +18,8 @@ const appointmentSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-
-  time: {
+  
+  time:{
     type: mongoose.Types.ObjectId,
     ref: "Time",
   },

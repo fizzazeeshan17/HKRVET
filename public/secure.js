@@ -8,6 +8,7 @@ fetch("/api/secure", {
 const bookingForm = document.querySelector("#bookingForm");
 const fullName = document.querySelector("#fullName");
 const dateInput = document.querySelector("#dateInput");
+//const timeInput = document.getElementById("radio");
 const textareaInput = document.querySelector("#textareaInput");
 const error = document.querySelector("#error");
 const errorOwner = document.querySelector("#errorOwner");
@@ -21,7 +22,8 @@ bookingForm.addEventListener("submit", (e) => {
     pet: pet.value,
     reason: textareaInput.value,
     fullName: fullName.value,
-    time: dateInput.value,
+    date: dateInput.value,
+  
   };
   fetch("/api/booking/create", {
     method: "POST",
@@ -44,6 +46,6 @@ bookingForm.addEventListener("submit", (e) => {
         return;
       }
 
-      console.log("Connected to file", data);
+      //console.log("Connected to file", data);
     });
 });
