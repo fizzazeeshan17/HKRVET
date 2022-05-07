@@ -40,7 +40,7 @@
           <button value="11:00-11:30">"11:00-11:30"</button>
           <button  value="11:30-12:00">"11:30-12:00"</button></div>
         <br><br>
-        
+
       <button type="submit" id="submitBtn"/>Submit 🗓️</button>
     </form>
     <p id="confirm"></p>
@@ -53,8 +53,7 @@
         const dateLabel = document.getElementById("dateInput").value
         const textareaLabel = document.getElementById("textareaInput").value
         confirm.innerHTML = "Booking is confirmed for: \n" +  " \n Name: \n" + nameLabel+ "  Pet: \n" + petLabel +  "   Date: \n" + dateLabel + "   Reason: \n" + textareaLabel
-     
-       
+    
       } 
       var todayDate = new Date();
       var month = todayDate.getMonth() + 1;
@@ -82,7 +81,7 @@
     <script>
       $("button").click(function() {
           var fired_button = $(this).val();
-          alert(fired_button);
+          //alert(fired_button);
       });
     
     </script>

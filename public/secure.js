@@ -1,9 +1,10 @@
-fetch("/api/secure", {
-  method: "GET",
-  headers: {
-    "auth-token": localStorage.getItem("auth-token"),
-  },
-});
+// fetch("/api/secure", {
+//   method: "GET",
+//   headers: {
+//     "auth-token": localStorage.getItem("auth-token"),
+//   },
+// });
+
 
 const bookingForm = document.querySelector("#bookingForm");
 const fullName = document.querySelector("#fullName");
