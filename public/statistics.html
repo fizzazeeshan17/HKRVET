@@ -1,126 +1,126 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Statistics</title>
-    <link rel="stylesheet" href="vet.css" />
-    <script
-      nonce="undefined"
-      src="https://cdn.zingchart.com/zingchart.min.js"
-    ></script>
-    <style>
-      body {
-        height: 100vh;
-        display: block;
-        justify-content: center;
-      }
 
-      #chart-one {
-        height: 75%;
-        width: 80%;
-        margin: 0 auto;
-      }
-    </style>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Statistics</title>
+  <link rel="stylesheet" href="vet.css" />
+  <script nonce="undefined" src="https://cdn.zingchart.com/zingchart.min.js"></script>
+  <style>
+    body {
+      height: 100vh;
+      display: block;
+      justify-content: center;
+    }
 
-  <body>
-    <button type="submit" class="buttonHome" onclick="home()">🏠</button>
-    <div id="chart-one"></div>
-    <img src="img/logo.jpg" id="icon" alt="User Icon" class="logo" />
+    #chart-one {
+      height: 75%;
+      width: 80%;
+      margin: 0 auto;
+    }
+  </style>
+</head>
 
-    <script>
-      ZC.LICENSE = [
-        "569d52cefae586f634c54f86dc99e6a9",
-        "b55b025e438fa8a98e32482b5f768ff5",
-      ];
-      const fetchParams = {
-        method: "GET",
-        mode: "cors",
-        cache: "default",
-      };
+<body>
+  <button type="submit" class="buttonHome" onclick="home()">🏠</button>
+  <div id="chart-one"></div>
+  <img src="img/logo.jpg" id="icon" alt="User Icon" class="logo" />
 
-      const url = "http://localhost:3000/api/booking/";
+  <script>
+    ZC.LICENSE = [
+      "569d52cefae586f634c54f86dc99e6a9",
+      "b55b025e438fa8a98e32482b5f768ff5",
+    ];
+    const fetchParams = {
+      method: "GET",
+      mode: "cors",
+      cache: "default",
+    };
 
-      fetch(url, fetchParams)
-        .then((res) => {
-          if (!res.ok) {
-            throw new Error(res.statusText);
-          }
-          return res.json();
-        })
-        .then((data) => {
-          const bookings = data;
-          let bookingsData = [];
-          bookings.forEach(function (booking) {
-            bookingsData.push([booking.pet, booking.time]);
-          });
-          const Statistics = {
-            type: "bar",
-            title: {
-              text: "Bookings Chart",
-              adjustLayout: true,
-              "font-size": "22px",
-            },
-            tooltip: {
-              text: "Pet: %kt<br>Time: %vv",
-            },
-            scaleX: {
-              label: {
-                text: "Pets",
-                "font-size": "16px",
-              },
-              item: {
-                angle: "-35",
-              },
-            },
-            scaleY: {
-              label: {
-                text: "Time",
-                "font-size": "16px",
-              },
-            },
-            series: [
-              {
-                values: bookingsData,
-              },
-            ],
-            plotarea: {
-              margin: "dynamic",
-            },
+    const url = "http://localhost:3000/api/booking/";
 
-            plot: {
-              styles: [
-                "maroon",
-                "#ff6666",
-                "#ff99cc",
-                "#cc99ff",
-                "#6699ff",
-                "#0000CD",
-                "yellow",
-                "#ff6666",
-                "green",
-                "#cc99ff",
-                "orange",
-                "gray",
-              ],
-              "border-width": 2,
-              "border-radius": "2px",
-            },
-          };
-          zingchart.render({
-            id: "chart-one",
-            data: Statistics,
-            height: "100%",
-            width: "100%",
-          });
-        })
-        .catch((err) => {
-          console.log("Error Getting Data From API");
+    fetch(url, fetchParams)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(res.statusText);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        const bookings = data;
+        let bookingsData = [];
+        bookings.forEach(function (booking) {
+          bookingsData.push([booking.pet, booking.time.date]);
         });
+        const Statistics = {
+          type: "bar",
+          title: {
+            text: "Bookings Chart",
+            adjustLayout: true,
+            "font-size": "22px",
+          },
+          tooltip: {
+            text: "Pet: %kt<br>Time: %vv",
+          },
+          scaleX: {
+            label: {
+              text: "Pets",
+              "font-size": "16px",
+            },
+            item: {
+              angle: "-35",
+            },
+          },
+          scaleY: {
+            label: {
+              text: "Date",
+              "font-size": "16px",
+            },
+          },
 
-      function home() {
-        window.location.href = "index.html";
-      }
-    </script>
-  </body>
+          series: [
+            {
+              values: bookingsData,
+            },
+          ],
+          plotarea: {
+            margin: "dynamic",
+          },
+
+          plot: {
+            styles: [
+              "maroon",
+              "#ff6666",
+              "#ff99cc",
+              "#cc99ff",
+              "#6699ff",
+              "#0000CD",
+              "yellow",
+              "#ff6666",
+              "green",
+              "#cc99ff",
+              "orange",
+              "gray",
+            ],
+            "border-width": 2,
+            "border-radius": "2px",
+          },
+        };
+        zingchart.render({
+          id: "chart-one",
+          data: Statistics,
+          height: "100%",
+          width: "100%",
+        });
+      })
+      .catch((err) => {
+        console.log("Error Getting Data From API");
+      });
+
+    function home() {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+
 </html>
