@@ -14,7 +14,7 @@
 }
 
 .datecss {
-  background-color: #f6f6f6;
+  background-color: #ffffff;
   border: none;
   color: #0d0d0d;
   text-align: center;
@@ -25,7 +25,7 @@
 }
 
 .textareacss {
-  background-color: #f6f6f6;
+  background-color: #ffffff;
   border: none;
   color: #0d0d0d;
   text-align: center;
@@ -37,7 +37,7 @@
 }
 
 .fields {
-  background-color: #f6f6f6;
+  background-color: #ffffff;
   border: none;
   color: #0d0d0d;
   text-align: center;
@@ -102,3 +102,6 @@ h2.active {
   height: 120px;
   text-align: center;
 }
+
+li { text-align:center; list-style-position:inside; font-size: 18px; margin-top: 1.5%; }
+

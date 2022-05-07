@@ -30,8 +30,9 @@
     <input placeholder="Pet Name" class="fields" name="add_pet" id="add_pet"></input>
     <input class="fields" placeholder="Reason of visit" name="add_reason" id="add_reason"></input>
     <input class="fields" placeholder="Owner Name" name="add_name" id="add_name"></input>
-    <input type="date" class="fields" placeholder="Date" name="add_time" id="add_time"></input>
-    <i id="table" onclick="addUser(add_pet, add_reason, add_name, add_time);"><i class='fa fa-plus'
+    <input type="date" class="fields" placeholder="Date" name="add_date" id="add_date"></input>
+    <input type="field" class="fields" placeholder="time" name="add_time" id="add_time"></input>
+    <i id="table" onclick="addUser(add_pet, add_reason, add_name, add_date, add_time);"><i class='fa fa-plus'
         style='font-size:26px;color:#FB667A'></i></td></i>
   </div>
 
@@ -69,6 +70,7 @@
           <th>Reason</th>
           <th>Pet Owner</th>
           <th>Date</th>
+          <th>Time</th>
           <th>Delete</th>
 
           </tr>`;
@@ -78,7 +80,8 @@
       <td>${r.pet} </td>
       <td>${r.reason}</td>
       <td>${r.fullName}</td>
-      <td>${r.time}</td>
+      <td>${r.time.date}</td>
+      <td>${r.time.time}</td>
      
    
        <td><i class='fas fa-trash-alt' style='font-size:26px;color:#FB667A' onclick="deleteUser('${r._id}')"></i></td>
@@ -98,7 +101,8 @@
       userData.pet = document.getElementById("add_pet").value;
       userData.reason = document.getElementById("add_reason").value;
       userData.fullName = document.getElementById("add_name").value;
-      userData.time = document.getElementById("add_time").value;
+      userData.time.date = document.getElementById("add_date").value;
+      userData.time.time = document.getElementById("add_time").value;
       return userData;
 
     }
@@ -131,6 +135,24 @@
     function home() {
       window.location.href = "index.html"
     }
+    var todayDate = new Date();
+      var month = todayDate.getMonth() + 1;
+      var maxMonth = month + 2; 
+      var year = todayDate.getUTCFullYear() - 0; 
+      var tdate = todayDate.getDate();
+      if(month < 10){
+        month = "0" + month
+      }
+      if(maxMonth < 10){
+        maxMonth = "0" + maxMonth
+      }
+      if(tdate < 10){
+        tdate = "0" + tdate;
+      }
+      var minDate = year + "-" + month + "-" + tdate;
+      var maxDate = year + "-" + maxMonth + "-" + tdate;
+      document.getElementById("add_date").setAttribute("min", minDate);
+      document.getElementById("add_date").setAttribute("max", maxDate);
   </script>
 </body>
 

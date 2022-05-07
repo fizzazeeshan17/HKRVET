@@ -7,7 +7,6 @@
   <title>Booking</title>
   <link rel="stylesheet" href="booking.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
 </head>
 
 <body>
@@ -33,26 +32,32 @@
         <input type="name" id="fullName" class="fields" placeholder="Owner name" size="30"><p class="error" id="errorOwner"></p>
         <br><br>
         <input type="date" id="dateInput" class="datecss" placeholder="Date" size="30"></input>
-        <div> <button value="9:00-9:30">"9:00-9:30"</button>
-          <button value="9:30-10:00">"9:30-10:00"</button>
-          <button value="10:00-10:30">"10:00-10:30"</button>
-          <button value="10:30-11:00">"10:30-11:00"</button>
-          <button value="11:00-11:30">"11:00-11:30"</button>
-          <button  value="11:30-12:00">"11:30-12:00"</button></div>
+        <br>
+        <h2>Time:</h2>
+        <div class="timeList">
+          <li >09:00-09:30</li>
+          <li >09:30-10:00</li>
+          <li >10:00-10:30</li>
+          <li >10:30-11:00</li>
+          <li >11:00-11:30</li>
+          <li >11:30-12:00</li></div>
+          <br><br>
+          <input class="fields" id="timeholder" placeholder="enter a time from list above" type="text">
         <br><br>
-
       <button type="submit" id="submitBtn"/>Submit 🗓️</button>
     </form>
-    <p id="confirm"></p>
+    <p id="errorMsg"></p>
+    <p id="dataTag"></p>
     <script>
       document.getElementById("submitBtn").addEventListener("click", myFunction);
       function myFunction() {
-        const confirm = document.getElementById("confirm")
+        const confirm = document.getElementById("dataTag")
         const nameLabel = document.getElementById("fullName").value
         const petLabel = document.getElementById("pet").value
         const dateLabel = document.getElementById("dateInput").value
         const textareaLabel = document.getElementById("textareaInput").value
-        confirm.innerHTML = "Booking is confirmed for: \n" +  " \n Name: \n" + nameLabel+ "  Pet: \n" + petLabel +  "   Date: \n" + dateLabel + "   Reason: \n" + textareaLabel
+        const timeLabel = document.getElementById("timeholder").value
+        confirm.innerHTML = "Booking is confirmed for: \n" +  " \n ->Name: \n" + nameLabel+ "  ->Pet: \n" + petLabel +  "   ->Date: \n" + dateLabel + "   ->Time: \n" + timeLabel + "   ->Reason: \n" + textareaLabel
     
       } 
       var todayDate = new Date();
@@ -78,13 +83,11 @@
       window.location.href = "index.html"
     }
     </script>
-    <script>
+<!--     <script>
       $("button").click(function() {
           var fired_button = $(this).val();
-          //alert(fired_button);
       });
-    
-    </script>
+    </script> -->
     
     <script src="secure.js"></script>
   </body>

@@ -1,21 +1,3 @@
-// fetch("/api/secure", {
-//   method: "GET",
-//   headers: {
-//     "auth-token": localStorage.getItem("auth-token"),
-//   },
-// });
-
-
-const bookingForm = document.querySelector("#bookingForm");
-const fullName = document.querySelector("#fullName");
-const dateInput = document.querySelector("#dateInput");
-//const timeInput = document.getElementById("radio");
-const textareaInput = document.querySelector("#textareaInput");
-const error = document.querySelector("#error");
-const errorOwner = document.querySelector("#errorOwner");
-const errorPet = document.querySelector("#errorPet");
-const pet = document.querySelector("#pet");
-
 bookingForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -24,7 +6,8 @@ bookingForm.addEventListener("submit", (e) => {
     reason: textareaInput.value,
     fullName: fullName.value,
     date: dateInput.value,
-  
+    time: timeholder.value,
+
   };
   fetch("/api/booking/create", {
     method: "POST",
@@ -37,12 +20,13 @@ bookingForm.addEventListener("submit", (e) => {
     .then((response) => {
       if (response.error) {
         errorMsg.innerHTML = response.error;
+        dataTag.innerHTML= "";
       }
 
-      if (dateInput.value == "" || textareaInput.value == "") {
-        error.innerHTML = "Please fill all the fields!";
+      if (dateInput.value == null || textareaInput.value == null) {
+        errorMsg.innerHTML = "Please fill all the fields!";
         setTimeout(() => {
-          error.innerHTML = "";
+          errorMsg.innerHTML = "";
         }, 2000);
         return;
       }
@@ -50,3 +34,4 @@ bookingForm.addEventListener("submit", (e) => {
       //console.log("Connected to file", data);
     });
 });
+

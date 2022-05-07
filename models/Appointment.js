@@ -21,7 +21,8 @@ const appointmentSchema = mongoose.Schema({
   
   time:{
     type: mongoose.Types.ObjectId,
-    ref: "Time",
+    ref: "Time"
+    
   },
 });
 
