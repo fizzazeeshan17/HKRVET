@@ -18,11 +18,10 @@ const appointmentSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  
-  time:{
+
+  time: {
     type: mongoose.Types.ObjectId,
-    ref: "Time"
-    
+    ref: "Time",
   },
 });
 

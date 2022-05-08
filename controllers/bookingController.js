@@ -34,7 +34,10 @@ const addBooking = async (req, res) => {
       date: req.body.date,
       time: req.body.time,
     });
-    const timeExist = await Time.findOne({ time: req.body.time, date: req.body.date});
+    const timeExist = await Time.findOne({
+      time: req.body.time,
+      date: req.body.date,
+    });
     if (timeExist) {
       return res.status(400).json({ error: "Time is already booked!" });
     }

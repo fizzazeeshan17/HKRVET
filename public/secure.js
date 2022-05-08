@@ -7,7 +7,6 @@ bookingForm.addEventListener("submit", (e) => {
     fullName: fullName.value,
     date: dateInput.value,
     time: timeholder.value,
-
   };
   fetch("/api/booking/create", {
     method: "POST",
@@ -20,7 +19,7 @@ bookingForm.addEventListener("submit", (e) => {
     .then((response) => {
       if (response.error) {
         errorMsg.innerHTML = response.error;
-        dataTag.innerHTML= "";
+        dataTag.innerHTML = "";
       }
 
       if (dateInput.value == null || textareaInput.value == null) {
@@ -30,8 +29,5 @@ bookingForm.addEventListener("submit", (e) => {
         }, 2000);
         return;
       }
-
-      //console.log("Connected to file", data);
     });
 });
-

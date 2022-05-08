@@ -1,3 +1,9 @@
+body {
+  border: solid green 1px;
+  box-shadow: 0 0 3px 3px rgb(5 11 70 / 30%);
+  border-radius: 10px;
+}
+
 .bookingForm {
   padding: 2%;
   color: black;
@@ -5,16 +11,12 @@
   flex-direction: column;
   width: fit-content;
   text-align: center;
-  margin: auto;
-  border: solid green 1px;
-  box-shadow: 0 0 3px 3px rgba(5, 11, 70, 0.3);
-  border-radius: 10px;
-  width: 50%;
+  margin: 35px auto 0;
   background-color: rgba(100, 169, 234, 0.1);
 }
 
 .datecss {
-  background-color: #ffffff;
+  background-color: white;
   border: none;
   color: #0d0d0d;
   text-align: center;
@@ -25,7 +27,7 @@
 }
 
 .textareacss {
-  background-color: #ffffff;
+  background-color: white;
   border: none;
   color: #0d0d0d;
   text-align: center;
@@ -37,7 +39,7 @@
 }
 
 .fields {
-  background-color: #ffffff;
+  background-color: white;
   border: none;
   color: #0d0d0d;
   text-align: center;
@@ -66,7 +68,7 @@ button[type="submit"] {
 }
 
 .inputlogo {
-  width: 250px;
+  width: 45%;
 }
 
 h2.active {
@@ -74,7 +76,24 @@ h2.active {
   border-bottom: 2px solid #006699;
 }
 
-.buttonHome{
+h2 {
+  text-align: center;
+  font-size: 1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 20px 8px 10px 8px;
+  padding-bottom: 15px;
+  color: black;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+.buttonHome {
+  margin-left: 5px;
+  margin-top: 5px;
   width: 90px;
   height: 75px;
   background: linear-gradient(45deg, rgb(156, 236, 37), rgb(19, 117, 215));
@@ -84,24 +103,17 @@ h2.active {
   font-weight: var(--font-weight-7);
 }
 
-
 .buttonHome:hover {
   cursor: pointer;
   color: var(--blue-0);
   color: white;
   background: linear-gradient(45deg, rgb(37, 40, 236), rgb(179, 159, 15));
   border-radius: var(--radius-2);
-  
-   
-
 }
 .logo {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 15px;
+  right: 15px;
   height: 120px;
   text-align: center;
 }
-
-li { text-align:center; list-style-position:inside; font-size: 18px; margin-top: 1.5%; }
-
