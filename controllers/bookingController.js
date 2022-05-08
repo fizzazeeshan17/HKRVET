@@ -38,9 +38,7 @@ const addBooking = async (req, res) => {
       time: req.body.time,
       date: req.body.date,
     });
-    if (timeExist) {
-      return res.status(400).json({ error: "Time is already booked!" });
-    }
+    if (timeExist){return res.status(400).json({ error: "Time is already booked!" });}
 
     await newTime.save();
     const booking = new Booking({
@@ -50,7 +48,6 @@ const addBooking = async (req, res) => {
       time: newTime,
     });
     booking.save();
-
     res.status(201).json(booking);
   } catch (err) {
     if (err.name === "ValidationError") {

@@ -18,7 +18,6 @@ bookingForm.addEventListener("submit", (e) => {
   })
     .then((res) => res.json())
     .then((response) => {
-      dataTag.innerHTML = "Booking is confirmed for: \n" + " \n ->Name: \n" + fullName.value + "  ->Pet: \n" + pet.value + "   ->Date: \n" + dateInput.value + "   ->Time: \n" + timeholder.value + "   ->Reason: \n" + textareaInput.value
       if (response.error) {
         errorMsg.innerHTML = response.error;
         dataTag.innerHTML = "";
@@ -28,6 +27,8 @@ bookingForm.addEventListener("submit", (e) => {
         errorMsg.innerHTML = "Please fill all the fields!";
 
 
+      }else{
+        dataTag.innerHTML = "🗓️" +"Booking is confirmed for: \n" + " \n ->Name: \n" + fullName.value + "  ->Pet: \n" + pet.value + "   ->Date: \n" + dateInput.value + "   ->Time: \n" + timeholder.value + "   ->Reason: \n" + textareaInput.value
       }
 
     })
