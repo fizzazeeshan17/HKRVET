@@ -1,7 +1,6 @@
 var signupForm = document.querySelector("#sign-up-form");
 var loginForm = document.querySelector("#login-form");
 
-// var signupName = document.querySelector('#sign-up-name');
 var signupPhone = document.querySelector("#sign-up-phone");
 var signupEmail = document.querySelector("#sign-up-email");
 var signupPassword = document.querySelector("#sign-up-password");
@@ -18,7 +17,6 @@ signupForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const signUpDetails = {
-    // fullName: signupName.value,
     phone: signupPhone.value,
     email: signupEmail.value,
     password: signupPassword.value,
@@ -72,19 +70,17 @@ loginForm.addEventListener("submit", (e) => {
         (loginDetails.email === "max@HKRVET.com" &&
           loginDetails.password === "abc123")
       ) {
-       
         errorMsg.innerHTML = "";
         localStorage.setItem("auth_token", response.token);
         location.href = "vet.html";
       } else if (
-        loginDetails.email === "admin@HKRVET.com" && loginDetails.password === "admin1")
-      { 
+        loginDetails.email === "admin@HKRVET.com" &&
+        loginDetails.password === "admin1"
+      ) {
         errorMsg.innerHTML = "";
         localStorage.setItem("auth_token", response.token);
         location.href = "admin.html";
-      }
-      
-      else {
+      } else {
         errorMsg.innerHTML = "";
         localStorage.setItem("auth_token", response.token);
         location.href = response.redirect;

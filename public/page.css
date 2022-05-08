@@ -26,15 +26,6 @@ a:hover {
 
 /* BASIC */
 
-/* html {
-  background-color: #006699;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  height: 100vh;
-} */
-
 a {
   color: #92badd;
   display: inline-block;
@@ -1087,7 +1078,7 @@ select:not([multiple]) {
 }
 
 .gmap_canvas + iframe {
-	width: 100%;
+  width: 100%;
 }
 
 .address {
@@ -1169,7 +1160,7 @@ select:not([multiple]) {
     left: 0;
     top: 0;
     background-color: white;
-	border: 2px solid rgb(0 102 153 / 0.8) !important;
+    border: 2px solid rgb(0 102 153 / 0.8) !important;
     color: black;
     padding: 10px 15px;
     transition: all 0.3s ease;
@@ -1178,7 +1169,7 @@ select:not([multiple]) {
     border-bottom-right-radius: 5px;
     top: 40px;
     z-index: 10000;
-	margin-left: 5%;
+    margin-left: 5%;
   }
 
   .navbar-toggler:focus {

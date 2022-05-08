@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 
 <head>
   <meta charset="UTF-8">
@@ -8,38 +9,36 @@
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="adminSelection.css" />
 
-  <title>Admin Choice</title>
-</head>
-
-
-<body>
-  <img src="img/logo.jpg" id="icon" alt="User Icon" class="logo"/>
-  <button type="submit" class="buttonHome" onclick="home()">🏠</button>
-  <br>
-  <h1 class="header">Welcome Administrator!</h1>
-  <div>
-   
-</div>
-  <section class="dark">
-    <button class="button" onclick="user()">Users</button>
+  <body>
+    <img src="img/logo.jpg" id="icon" alt="User Icon" class="logo" />
+    <button type="submit" class="buttonHome" onclick="home()">🏠</button>
+    <br />
+    <h1 class="header">Welcome Administrator!</h1>
     <br>
-    <button class="button" onclick="booking()">Bookings</button>
-  </section>
-  <script>
-    function user() {
-      window.location.href = "adminUsers.html";
-    }
+    <div></div>
+    <section class="dark">
+      <button class="button" onclick="user()">Users</button>
+      <br />
+      <button class="button" onclick="booking()">Bookings</button>
+      <br />
+      <button class="button" onclick="statistics()">Statistics</button>
+    </section>
+    <script>
+      function user() {
+        window.location.href = "adminUsers.html";
+      }
 
-    function booking() {
-      window.location.href = "adminBookings.html"
-    }
+      function booking() {
+        window.location.href = "adminBookings.html";
+      }
 
-    function home(){
-      window.location.href = "index.html"
-    }
+      function statistics() {
+        window.location.href = "statistics.html";
+      }
 
-  </script>
-
-</body>
-
+      function home() {
+        window.location.href = "index.html";
+      }
+    </script>
+  </body>
 </html>

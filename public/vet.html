@@ -14,7 +14,7 @@
 
 
 <body>
-  <img src="img/logo.jpg" id="icon" alt="User Icon" class="logo"/>
+  <img src="img/logo.jpg" id="icon" alt="User Icon" class="logo" />
   <button type="submit" class="buttonHome" onclick="home()">🏠</button>
   <h2 class="header">Bookings</h2>
   <br>
@@ -25,12 +25,7 @@
 
   <table id="table" class="container">
   </table>
-
-
-
   <br><br><br><br>
-
-
 
   <script>
     const api_url =
@@ -61,8 +56,7 @@
            <th>Reason</th>
            <th>Pet Owner</th>
            <th>Date</th>
-         
- 
+           <th>Time</th>
            </tr>`;
       for (let r of data) {
 
@@ -71,11 +65,8 @@
        <td>${r.pet} </td>
        <td>${r.reason}</td>
        <td>${r.fullName}</td>
-       <td>${r.time}</td>
-      
-    
-      
-      
+       <td>${r.time.date}</td>
+       <td>${r.time.time}</td>
    </tr>`;
       }
 
@@ -83,23 +74,16 @@
       document.getElementById("table").innerHTML = tab;
     }
 
-
-
-
-
-
     const getUsers = () => {
       fetch("/api/booking")
         .then((response) => response.json())
         .then((data) => data);
     };
 
-
-
-    function home(){
+    function home() {
       window.location.href = "index.html"
     }
-    
+
   </script>
 </body>
 

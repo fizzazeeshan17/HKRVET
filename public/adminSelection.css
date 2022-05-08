@@ -1,12 +1,12 @@
 @import "https://unpkg.com/open-props";
 
 body {
-    border: solid green 1px;
-    box-shadow: 0 0 3px 3px rgb(5 11 70 / 30%);
-    border-radius: 10px;
-    display: block;
-    margin: 8px;
-    min-height: 100%;
+  border: solid green 1px;
+  box-shadow: 0 0 3px 3px rgb(5 11 70 / 30%);
+  border-radius: 10px;
+  display: block;
+  margin: 8px;
+  min-height: 100%;
 }
 
 .button {
@@ -88,7 +88,7 @@ section.dark {
   background: linear-gradient(45deg, rgb(156, 236, 37), rgb(19, 117, 215));
 }
 
-.buttonHome{
+.buttonHome {
   width: 90px;
   height: 75px;
   background: linear-gradient(45deg, rgb(156, 236, 37), rgb(19, 117, 215));
@@ -100,16 +100,12 @@ section.dark {
   margin-top: 5px;
 }
 
-
 .buttonHome:hover {
   cursor: pointer;
   color: var(--blue-0);
   color: white;
   background: linear-gradient(45deg, rgb(37, 40, 236), rgb(179, 159, 15));
   border-radius: var(--radius-2);
-  
-   
-
 }
 
 .logo {

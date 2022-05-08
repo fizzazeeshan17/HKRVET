@@ -1,10 +1,8 @@
 const router = require("express").Router();
-const User = require("../models/User");
+const User = require("../models/user");
 const { registerValidation, loginValidation } = require("../validation");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const signale = require("signale");
-const jwt_decode = require("jwt-decode");
 
 router.get("/", async (req, res) => {
   try {
@@ -63,7 +61,6 @@ router.delete("/:id", async (req, res) => {
 });
 
 router.post("/register", async (req, res) => {
-  // user
   const { error } = registerValidation(req.body);
 
   if (error) {
@@ -79,9 +76,7 @@ router.post("/register", async (req, res) => {
   const salt = await bcrypt.genSalt(10);
   const hashPassword = await bcrypt.hash(req.body.password, salt);
 
-  // user creation
   const user = new User({
-    // fullName: req.body.fullName,
     phone: req.body.phone,
     email: req.body.email,
     password: hashPassword,
@@ -90,7 +85,6 @@ router.post("/register", async (req, res) => {
   try {
     const savedUser = await user.save();
     const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
-    // sorry sir but I am a superman fan :)
     res.json({ user: user._id, redirect: "#login", token });
   } catch (err) {
     res.status(400).json(err);
@@ -113,9 +107,8 @@ router.post("/login", async (req, res) => {
     return res.status(400).json({ error: "Invalid Password" });
   }
 
-  // creating and assinging token for frontend
   const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
-  res.header("auth_token", token).json({ token, redirect: "batcave.html" });
+  res.header("auth_token", token).json({ token, redirect: "booking.html" });
 });
 
 module.exports = router;

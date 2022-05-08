@@ -7,13 +7,9 @@ const signale = require("signale");
 const userRoute = require("./routes/userRoutes");
 const secureRoute = require("./routes/secure");
 const bookingRoute = require("./routes/bookingRoute");
-
-
+const timeRouter = require("./routes/timeRoute");
 
 dotenv.config();
-
-
-
 
 app.use(express.json());
 
