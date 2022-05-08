@@ -21,13 +21,12 @@ bookingForm.addEventListener("submit", (e) => {
         errorMsg.innerHTML = response.error;
         dataTag.innerHTML = "";
       }
-
-      if (dateInput.value == null || textareaInput.value == null) {
+      else if (pet  == null || textareaInput == null || fullName  == null || dateInput  == null || timeholder  == null) 
+      { 
         errorMsg.innerHTML = "Please fill all the fields!";
-        setTimeout(() => {
-          errorMsg.innerHTML = "";
-        }, 2000);
-        return;
+
+
       }
-    });
+
+    })
 });
