@@ -85,7 +85,6 @@ router.post("/register", async (req, res) => {
   try {
     const savedUser = await user.save();
     const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
-    // sorry sir but I am a superman fan :)
     res.json({ user: user._id, redirect: "#login", token });
   } catch (err) {
     res.status(400).json(err);

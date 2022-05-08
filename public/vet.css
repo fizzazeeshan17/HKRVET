@@ -13,12 +13,9 @@ body {
   background: linear-gradient(45deg, rgb(156, 236, 37), rgb(19, 117, 215));
   color: white;
   font-size: 2rem;
-  width: 60%;
   padding: 1rem;
   text-align: center;
   text-transform: uppercase;
-  margin-left: 350px;
-  margin: 0 auto;
 }
 
 .fields {

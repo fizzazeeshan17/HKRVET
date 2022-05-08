@@ -17,7 +17,6 @@ app.use(express.static("public"));
 app.use("/api/user", userRoute);
 app.use("/api/secure", secureRoute);
 app.use("/api/booking", bookingRoute);
-// app.use("/api/time", timeRouter);
 
 mongoose.connect(
   process.env.DB_CONNECTION,

@@ -18,15 +18,4 @@ const createTime = async (req, res) => {
   });
 };
 
-// (exports.findByDate = (req, res) => {
-//     const slot_date = req.params.slot_date;
-//     console.log("slot date: ", slot_date);
-
-//     //Returns all slot with present date
-//     Slot.find({})
-//       .where("slot_date")
-//       .equals(slot_date)
-//       .exec((err, slots) => res.json(slots));
-//   });
-
 module.exports = { alltimes, createTime };

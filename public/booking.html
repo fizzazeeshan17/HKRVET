@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Booking</title>
   <link rel="stylesheet" href="booking.css" />
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 
 <body>
-  <img src="img/logo.jpg" id="icon" alt="User Icon" class="logo"/>
+  <img src="img/logo.jpg" id="icon" alt="User Icon" class="logo" />
   <button type="submit" class="buttonHome" onclick="home()">🏠</button>
   <div class="bookingForm">
 
@@ -21,51 +21,73 @@
       <img src="img/vets.jpg" id="icon" alt="User Icon" class="inputlogo" />
     </div>
 
-   <form id="bookingForm">
-    <p id="error"></p>
+    <form id="bookingForm">
+      <p id="error"></p>
       <br>
-        <input type="pet" id="pet" class="fields" placeholder="Pet Name" size="30"><p class="error" id="errorPet"></p>
+      <input type="pet" id="pet" class="fields" placeholder="Pet Name" size="30">
+      <p class="error" id="errorPet"></p>
       </label>
-        <br><br>
-        <textarea id="textareaInput" class="textareacss" placeholder="Enter reason of visit" size="30"></textarea>
-        <br><br>
-        <input type="name" id="fullName" class="fields" placeholder="Owner name" size="30"><p class="error" id="errorOwner"></p>
-        <br><br>
-        <input type="datetime-local" id="dateInput" class="datecss" placeholder="Date" size="30"></input>
-
-        <br><br>
-        
-      <button type="submit" id="submitBtn"/>Book Time 🗓️</button>
+      <br><br>
+      <textarea id="textareaInput" class="textareacss" placeholder="Enter reason of visit" size="30"></textarea>
+      <br><br>
+      <input type="name" id="fullName" class="fields" placeholder="Owner name" size="30">
+      <p class="error" id="errorOwner"></p>
+      <br><br>
+      <input type="date" id="dateInput" class="datecss" placeholder="Date" size="30"></input>
+      <br>
+      <h2>Times Available:</h2>
+      <div class="timeList">
+        <li>09:00-09:30</li>
+        <li>09:30-10:00</li>
+        <li>10:00-10:30</li>
+        <li>10:30-11:00</li>
+        <li>11:00-11:30</li>
+        <li>11:30-12:00</li>
+      </div>
+      <br><br>
+      <input class="fields" id="timeholder" size="30" placeholder="Choose a time from the list above" type="text">
+      <br><br>
+      <button type="submit" id="submitBtn" />Submit 🗓️</button>
     </form>
-    <p id="confirm"></p>
+    <p id="errorMsg"></p>
+    <p id="dataTag"></p>
     <script>
       document.getElementById("submitBtn").addEventListener("click", myFunction);
       function myFunction() {
-        const confirm = document.getElementById("confirm")
+        const confirm = document.getElementById("dataTag")
         const nameLabel = document.getElementById("fullName").value
         const petLabel = document.getElementById("pet").value
         const dateLabel = document.getElementById("dateInput").value
         const textareaLabel = document.getElementById("textareaInput").value
-        confirm.innerHTML = "Booking is confirmed for: \n" +  " \n Name: \n" + nameLabel+ "  Pet: \n" + petLabel +  "   Date: \n" + dateLabel + "   Reason: \n" + textareaLabel
-     
-       
-      } 
+        const timeLabel = document.getElementById("timeholder").value
+        confirm.innerHTML = "Booking is confirmed for: \n" + " \n ->Name: \n" + nameLabel + "  ->Pet: \n" + petLabel + "   ->Date: \n" + dateLabel + "   ->Time: \n" + timeLabel + "   ->Reason: \n" + textareaLabel
 
-      function home(){
-      window.location.href = "index.html"
-    }
+      }
+      var todayDate = new Date();
+      var month = todayDate.getMonth() + 1;
+      var maxMonth = month + 2;
+      var year = todayDate.getUTCFullYear() - 0;
+      var tdate = todayDate.getDate();
+      if (month < 10) {
+        month = "0" + month
+      }
+      if (maxMonth < 10) {
+        maxMonth = "0" + maxMonth
+      }
+      if (tdate < 10) {
+        tdate = "0" + tdate;
+      }
+      var minDate = year + "-" + month + "-" + tdate;
+      var maxDate = year + "-" + maxMonth + "-" + tdate;
+      document.getElementById("dateInput").setAttribute("min", minDate);
+      document.getElementById("dateInput").setAttribute("max", maxDate);
+
+      function home() {
+        window.location.href = "index.html"
+      }
     </script>
-    
+
     <script src="secure.js"></script>
-  </body>
+</body>
+
 </html>
-
-
-
-
-  
-
-    
-    
-    
-     
