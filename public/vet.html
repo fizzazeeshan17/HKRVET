@@ -24,12 +24,7 @@
 
   <table id="table" class="container">
   </table>
-
-
-
   <br><br><br><br>
-
-
 
   <script>
     const api_url =
@@ -78,18 +73,11 @@
       document.getElementById("table").innerHTML = tab;
     }
 
-
-
-
-
-
     const getUsers = () => {
       fetch("/api/booking")
         .then((response) => response.json())
         .then((data) => data);
     };
-
-
 
     function home() {
       window.location.href = "index.html"
