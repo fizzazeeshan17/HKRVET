@@ -21,13 +21,9 @@ bookingForm.addEventListener("submit", (e) => {
       if (response.error) {
         errorMsg.innerHTML = response.error;
         dataTag.innerHTML = "";
+        setTimeout(() => { errorMsg.innerHTML=""; }, 5000);
       }
-      else if (pet  == null || textareaInput == null || fullName  == null || dateInput  == null || timeholder  == null) 
-      { 
-        errorMsg.innerHTML = "Please fill all the fields!";
-
-
-      }else{
+      else{
         dataTag.innerHTML = "🗓️" +"Booking is confirmed for: \n" + " \n ->Name: \n" + fullName.value + "  ->Pet: \n" + pet.value + "   ->Date: \n" + dateInput.value + "   ->Time: \n" + timeholder.value + "   ->Reason: \n" + textareaInput.value
       }
 

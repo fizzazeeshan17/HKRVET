@@ -49,8 +49,14 @@ body {
   border: 2px solid #f6f6f6;
 }
 
-#error {
+#errorMsg {
   color: red;
+  font-size: 22px;
+}
+
+#dataTag {
+  color: darkgreen;
+  font-size: 22px;
 }
 
  button[type="submit"] {
