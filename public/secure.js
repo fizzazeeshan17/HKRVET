@@ -14,6 +14,7 @@ bookingForm.addEventListener("submit", (e) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(bookingDetails),
+  
   })
     .then((res) => res.json())
     .then((response) => {
@@ -21,13 +22,14 @@ bookingForm.addEventListener("submit", (e) => {
         errorMsg.innerHTML = response.error;
         dataTag.innerHTML = "";
       }
-
-      if (dateInput.value == null || textareaInput.value == null) {
+      else if (pet  == null || textareaInput == null || fullName  == null || dateInput  == null || timeholder  == null) 
+      { 
         errorMsg.innerHTML = "Please fill all the fields!";
-        setTimeout(() => {
-          errorMsg.innerHTML = "";
-        }, 2000);
-        return;
+
+
+      }else{
+        dataTag.innerHTML = "🗓️" +"Booking is confirmed for: \n" + " \n ->Name: \n" + fullName.value + "  ->Pet: \n" + pet.value + "   ->Date: \n" + dateInput.value + "   ->Time: \n" + timeholder.value + "   ->Reason: \n" + textareaInput.value
       }
-    });
+
+    })
 });
