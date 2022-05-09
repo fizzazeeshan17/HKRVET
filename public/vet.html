@@ -51,7 +51,6 @@
     function show(data) {
       let tab =
         `<tr>
-           <th>Pet ID</th>
            <th>Pet Name</th>
            <th>Reason</th>
            <th>Pet Owner</th>
@@ -61,7 +60,6 @@
       for (let r of data) {
 
         tab += `<tr>
-       <td>${r._id} </td>
        <td>${r.pet} </td>
        <td>${r.reason}</td>
        <td>${r.fullName}</td>
