@@ -47,7 +47,7 @@
       <br><br>
       <input class="fields" id="timeholder" size="30" placeholder="Choose a time from the list above" type="text">
       <br><br>
-      <button type="submit" id="submitBtn" />Submit 🗓️</button>
+      <button type="submit" id="submitBtn" onclick="return timeCheck()" />Submit 🗓️</button>
     </form>
     <p id="errorMsg"></p>
     <p id="dataTag"></p>
@@ -74,6 +74,18 @@
       function home() {
         window.location.href = "index.html"
       }
+
+      function timeCheck(){
+        var regex = new RegExp("09:00\\-09:30|09:30\\-10:00|10:00\\-10:30|10:30\\-11:00|11:00\\-11:30|11:30\\-12:00", "g");
+        
+
+        if(!document.getElementById("timeholder").value.match(regex)){
+          errorMsg.innerHTML = "Please enter a time from the given list"
+          setTimeout(() => { errorMsg.innerHTML=""; }, 5000);
+          return false;
+        } 
+      }
+
     </script>
 
     <script src="secure.js"></script>
