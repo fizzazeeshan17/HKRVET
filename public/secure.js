@@ -6,7 +6,7 @@ bookingForm.addEventListener("submit", (e) => {
     reason: textareaInput.value,
     fullName: fullName.value,
     date: dateInput.value,
-    time: timeholder.value,
+    time: timeList.value,
   };
   fetch("/api/booking/create", {
     method: "POST",
@@ -14,18 +14,29 @@ bookingForm.addEventListener("submit", (e) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(bookingDetails),
-  
   })
     .then((res) => res.json())
     .then((response) => {
       if (response.error) {
         errorMsg.innerHTML = response.error;
         dataTag.innerHTML = "";
-        setTimeout(() => { errorMsg.innerHTML=""; }, 5000);
+        setTimeout(() => {
+          errorMsg.innerHTML = "";
+        }, 5000);
+      } else {
+        dataTag.innerHTML =
+          "🗓️" +
+          "Booking is confirmed for: \n" +
+          " \n ->Name: \n" +
+          fullName.value +
+          "  ->Pet: \n" +
+          pet.value +
+          "   ->Date: \n" +
+          dateInput.value +
+          "   ->Time: \n" +
+          timeList.value +
+          "   ->Reason: \n" +
+          textareaInput.value;
       }
-      else{
-        dataTag.innerHTML = "🗓️" +"Booking is confirmed for: \n" + " \n ->Name: \n" + fullName.value + "  ->Pet: \n" + pet.value + "   ->Date: \n" + dateInput.value + "   ->Time: \n" + timeholder.value + "   ->Reason: \n" + textareaInput.value
-      }
-
-    })
+    });
 });

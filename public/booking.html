@@ -28,26 +28,33 @@
       <p class="error" id="errorPet"></p>
       </label>
       <br><br>
-      <textarea id="textareaInput" class="textareacss"required  placeholder="Enter reason of visit" size="30"></textarea>
+      <textarea id="textareaInput" class="textareacss" required placeholder="Enter reason of visit"
+        size="30"></textarea>
       <br><br>
       <input type="name" id="fullName" class="fields" required placeholder="Owner name" size="30">
       <p class="error" id="errorOwner"></p>
       <br><br>
       <input type="date" id="dateInput" class="datecss" required placeholder="Date" size="30"></input>
-      <br>
-      <h2>Times Available:</h2>
-      <div class="timeList">
-        <li>09:00-09:30</li>
-        <li>09:30-10:00</li>
-        <li>10:00-10:30</li>
-        <li>10:30-11:00</li>
-        <li>11:00-11:30</li>
-        <li>11:30-12:00</li>
-      </div>
+      <br><br><br>
+
+      <h2>Kindly select a time</h2>
+      <select id="myList" onchange="getTimes()">
+       
+        <option>09:00-09:30</option>
+        <option>09:30-10:00</option>
+        <option>10:00-10:30</option>
+        <option>10:30-11:00</option>
+        <option>11:00-11:30</option>
+        <option>11:30-12:00</option>
+      </select>
       <br><br>
-      <input class="fields" id="timeholder" size="30" placeholder="Choose a time from the list above" type="text">
+      <p class="timeP"> Your selected time is:
+        <input disabled type="text" id="timeList" size="20" class="fields">
+      </p>
+
       <br><br>
-      <button type="submit" id="submitBtn" />Submit 🗓️</button>
+
+      <button type="submit" id="submitBtn"/>Submit 🗓️</button>
     </form>
     <p id="errorMsg"></p>
     <p id="dataTag"></p>
@@ -74,6 +81,13 @@
       function home() {
         window.location.href = "index.html"
       }
+
+ function getTimes() {  
+var mylist = document.getElementById("myList");  
+document.getElementById("timeList").value = mylist.options[mylist.selectedIndex].text;  
+}  
+
+
     </script>
 
     <script src="secure.js"></script>
