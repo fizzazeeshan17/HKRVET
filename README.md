@@ -20,14 +20,6 @@ Type npm i in the terminal to get all dependencies.
 Why have you used MongoDB?
     We have used MongoDB because MongoDB is faster than MySQL due to its ability to handle large amounts of unstructured data when it comes to speed. Furthermore, MongoDB is a full cloud-based application data platform which has flexible document schemas, it even has widely supported and code-native data access and is good to use because of it's change-friendly design. It has a very simple installation and it is good for us because it is cost-effective :)
 
-Why has no one accepted my time?
-    Our vets are usually busy therefore it might take some time before your appointment is accpeted by a vet.
-
-
-Can my appointment be declined and will I get a refund?
-    Yes, if no vet accepts your appointment, it will be declined(deleted) and you will get a refund.
-
-
  * Maintainers
 ---------------------
 Bin Umar Saiid, 
