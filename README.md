@@ -27,3 +27,8 @@ Ewnetu Tesfaye,
 Fizza Zeeshan,
 Musa Naji,
 Muhammad Muaz Khan
+
+ * GitHub Pages
+---------------------
+
+https://fizzazeeshan17.github.io/HKRVET/
